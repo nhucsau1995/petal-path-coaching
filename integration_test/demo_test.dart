@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:petal_path/app.dart';
 
-/// Paced ~22 s walkthrough with real taps, recorded for the demo GIF.
+/// Paced ~20 s walkthrough (about 24 s on the CI emulator) with real taps, recorded for the demo GIF.
 /// Prints PP_DEMO_START / PP_DEMO_END to logcat so the capture script can
 /// trim the recording to exactly the walkthrough.
 void main() {
@@ -37,30 +37,28 @@ void main() {
     await tester.pumpWidget(const ProviderScope(child: PetalPathApp()));
     await hold(tester, 800);
     debugPrint('PP_DEMO_START');
-    await hold(tester, 1200);
+    await hold(tester, 800);
 
     await tap(tester, 'plan_oneToOne', after: 500);
-    await tap(tester, 'sign_in', after: 1800);
+    await tap(tester, 'sign_in', after: 1400);
     await tap(tester, 'home_check_protein', after: 900);
-    await scroll(tester, 'home_list', 380);
 
-    await tap(tester, 'tab_learn', after: 1300);
-    await tap(tester, 'lesson_card', after: 1200);
-    await tap(tester, 'video_player', after: 900);
-    await tap(tester, 'mark_complete', after: 1100);
+    await tap(tester, 'tab_learn', after: 1000);
+    await tap(tester, 'lesson_card', after: 1000);
+    await tap(tester, 'mark_complete', after: 900);
     await tap(tester, 'back', after: 600);
 
     await tap(tester, 'tab_habits', after: 900);
     await tap(tester, 'habit_check_stretch', after: 900);
 
-    await tap(tester, 'tab_progress', after: 1600);
+    await tap(tester, 'tab_progress', after: 1300);
     await tap(tester, 'seg_activity', after: 700);
-    await tap(tester, 'sync_health', after: 1600);
+    await tap(tester, 'sync_health', after: 1400);
 
     await tap(tester, 'tab_me', after: 900);
     await scroll(tester, 'profile_list', 420);
-    await tap(tester, 'open_coach_view', after: 1300);
-    await tap(tester, 'revoke_priya', after: 1500);
+    await tap(tester, 'open_coach_view', after: 1100);
+    await tap(tester, 'revoke_priya', after: 1300);
 
     debugPrint('PP_DEMO_END');
     await hold(tester, 500);

@@ -56,6 +56,10 @@ void main() {
     await tap(tester, 'seg_activity');
     await tap(tester, 'sync_health');
     await settle(tester, 1500);
+    // Tapping the sync button scrolled it into view; go back to the top so the steps ring shows.
+    await tester.drag(find.descendant(of: find.byKey(const Key('activity_list')), matching: find.byType(Scrollable)).first,
+        const Offset(0, 800));
+    await settle(tester);
     await binding.takeScreenshot('07-activity');
 
     await tap(tester, 'tab_home');
