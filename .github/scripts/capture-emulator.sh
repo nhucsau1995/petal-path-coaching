@@ -98,7 +98,7 @@ START=$(mark PP_DEMO_START); END=$(mark PP_DEMO_END)
 TRIM=()
 if [ -n "$START" ] && [ -n "$END" ]; then
   SS=$(awk -v s="$START" -v t="$REC_T0" 'BEGIN{d=s-t-0.3; if(d<0)d=0; printf "%.2f", d}')
-  DUR=$(awk -v s="$START" -v e="$END" -v m="$GIF_MAX" 'BEGIN{d=e-s+0.8; if(d>m)d=m; printf "%.2f", d}')
+  DUR=$(awk -v s="$START" -v e="$END" -v m="$GIF_MAX" 'BEGIN{d=e-s+0.3; if(d>m)d=m; printf "%.2f", d}')
   TRIM=(-ss "$SS" -t "$DUR")
   echo "capture: walkthrough at +${SS}s for ${DUR}s"
 else
