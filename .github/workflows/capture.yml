@@ -24,7 +24,9 @@ jobs:
         with: { distribution: temurin, java-version: '17' }
 
       - uses: subosito/flutter-action@v2
-        with: { channel: stable, cache: true }
+        # Pin to the Flutter version the pod verified with (flutter analyze + flutter test).
+        # Floating 'stable' moved to 3.47, which rejects this project's Gradle 8.12 wrapper.
+        with: { channel: stable, flutter-version: 3.35.0, cache: true }
 
       - run: flutter pub get
 
