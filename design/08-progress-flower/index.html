@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Progress - my flower | Petal Path</title>
+<!-- Google Fonts: Oswald & Barlow Condensed -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-alt": "#EAF5F7",
+            "surface-container-highest": "#e0e3e5",
+            "border-hairline": "#D5E6E9",
+            "inverse-primary": "#7cd3ec",
+            "inverse-on-surface": "#eef1f3",
+            "success-bg": "#E3F4E9",
+            "secondary": "#00677d",
+            "hero-gradient-start": "#00788F",
+            "accent-tint": "#DBF6FC",
+            "on-secondary-fixed": "#001f27",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#b2ebff",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "primary-fixed-dim": "#7cd3ec",
+            "tertiary-container": "#9a601e",
+            "on-primary-fixed": "#001f27",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#004e5e",
+            "warning-text": "#A75906",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-container": "#005a6d",
+            "accent-fill": "#00788F",
+            "surface-variant": "#e0e3e5",
+            "text-tertiary": "#66767A",
+            "surface-tint": "#00687c",
+            "primary": "#005e70",
+            "surface-container-low": "#f1f4f6",
+            "surface": "#FFFFFF",
+            "secondary-fixed-dim": "#3bd7fe",
+            "surface-dim": "#d7dadc",
+            "secondary-container": "#3bd7fe",
+            "on-primary-container": "#dbf5ff",
+            "on-tertiary-fixed": "#2d1600",
+            "info-bg": "#E0EFF2",
+            "text-secondary": "#4A5D61",
+            "on-surface-variant": "#3e484c",
+            "accent-pressed": "#006F85",
+            "inverse-surface": "#2d3133",
+            "background": "#F4FBFC",
+            "outline": "#6e797c",
+            "warning-bg": "#FAEFE1",
+            "control-border": "#669C9F",
+            "danger-text": "#CE2020",
+            "on-primary": "#ffffff",
+            "info-text": "#00748A",
+            "tertiary-fixed": "#ffdcbe",
+            "tertiary-fixed-dim": "#ffb871",
+            "primary-fixed": "#b0ecff",
+            "on-tertiary-container": "#ffede0",
+            "support-strong": "#FF529E",
+            "success-text": "#0E7C3A",
+            "primary-container": "#00788f",
+            "on-tertiary-fixed-variant": "#6a3c00",
+            "surface-container-high": "#e5e9ea",
+            "on-secondary": "#ffffff",
+            "on-background": "#181c1e",
+            "on-surface": "#181c1e",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#004e5e",
+            "text-primary": "#0C1C1F",
+            "danger-bg": "#FBE5E5",
+            "surface-container": "#ebeef0",
+            "outline-variant": "#bec8cc",
+            "hero-gradient-end": "#006F85",
+            "tertiary": "#7d4804",
+            "support": "#FF7AB6",
+            "surface-bright": "#f7fafc"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "card": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "space-2xl": "2rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "margin": "1.25rem"
+          },
+          "fontFamily": {
+            "title-md": ["Oswald"],
+            "headline-lg": ["Oswald"],
+            "label-md": ["Barlow Condensed"],
+            "caption-sm": ["Barlow Condensed"],
+            "body-md": ["Barlow Condensed"]
+          },
+          "fontSize": {
+            "title-md": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+            "caption-sm": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .soft-card-shadow {
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+    }
+    body {
+      -webkit-font-smoothing: antialiased;
+      background-color: #F4FBFC;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center items-start selection:bg-accent-tint">
+<!-- Mobile Container (393px width constraint for standard mobile layout) -->
+<main class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-28">
+<!-- Top App Bar (Shared Components execution: small_center_aligned, no border lines, subtle tonal shift / shadow) -->
+<header class="sticky top-0 z-40 bg-surface flex justify-between items-center px-margin h-14 shadow-sm">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="spa">spa</span>
+<span class="font-title-md text-title-md text-primary tracking-tight font-bold">Progress</span>
+</div>
+<div class="flex items-center space-x-2">
+<button aria-label="Notifications" class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-accent-tint hover:text-accent-pressed active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Sub-header Segmented Control -->
+<section class="px-margin pt-4 pb-2">
+<nav aria-label="Progress sections" class="bg-surface-alt p-1 rounded-full flex items-center justify-between border border-border-hairline">
+<button class="flex-1 py-1.5 px-space-md rounded-full bg-surface text-primary font-label-md text-label-md font-semibold shadow-sm transition-all text-center flex items-center justify-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-accent-fill"></span>
+<span>Flower</span>
+</button>
+<button class="flex-1 py-1.5 px-space-md rounded-full text-text-tertiary font-label-md text-label-md transition-all text-center hover:text-text-primary">
+<span>Activity</span>
+</button>
+</nav>
+</section>
+<!-- Content Canvas -->
+<div class="px-margin space-y-space-lg pt-2">
+<!-- FOCAL ELEMENT: Progress Flower Card -->
+<section class="bg-surface rounded-card p-space-xl soft-card-shadow border border-border-hairline flex flex-col items-center text-center">
+<!-- Badge Tag -->
+<div class="inline-flex items-center gap-1.5 px-space-md py-0.5 rounded-full bg-accent-tint text-primary font-label-md text-label-md font-semibold mb-3">
+<span class="material-symbols-outlined text-sm" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+<span>Active Growth Cycle</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary mb-1">Your Mindful Petals</h1>
+<p class="font-body-md text-body-md text-text-secondary mb-4">Stage 2 • Emotional Resonance &amp; Energy</p>
+<!-- 2D Vector Flat Flower Illustration -->
+<div class="relative w-60 h-60 flex items-center justify-center my-2">
+<svg class="w-full h-full drop-shadow-sm" viewbox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<!-- 60% vertical fill gradient for Petal 2 -->
+<lineargradient id="petalPartialFill" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#FF7AB6"></stop>
+<stop offset="60%" stop-color="#FF7AB6"></stop>
+<stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"></stop>
+</lineargradient>
+<!-- Petal outline template centered vertically above origin -->
+<!-- Petal shape geometry: smooth rounded petal radiating outward -->
+<path d="M 130 130 C 108 96 102 44 130 18 C 158 44 152 96 130 130 Z" id="singlePetal"></path>
+</defs>
+<!-- Background subtle halo track -->
+<circle cx="130" cy="130" fill="none" r="102" stroke="#EAF5F7" stroke-dasharray="4 6" stroke-width="2"></circle>
+<!-- PETAL 1: (Angle: 0 deg - North) Fully Filled Bright Cyan (#00C2E8) -->
+<g transform="rotate(0, 130, 130)">
+<path d="M 130 130 C 108 96 102 44 130 18 C 158 44 152 96 130 130 Z" fill="#00C2E8" stroke="#00A7C9" stroke-width="1.5"></path>
+</g>
+<!-- PETAL 2: (Angle: 60 deg - North East) Partially Filled 60% Soft Pink (#FF7AB6) -->
+<g transform="rotate(60, 130, 130)">
+<path d="M 130 130 C 108 96 102 44 130 18 C 158 44 152 96 130 130 Z" fill="url(#petalPartialFill)" stroke="#FF7AB6" stroke-width="1.5"></path>
+<!-- Subtle 60% boundary marker line inside petal -->
+<line opacity="0.6" stroke="#FF529E" stroke-dasharray="2 2" stroke-width="1" x1="116" x2="144" y1="62" y2="62"></line>
+</g>
+<!-- PETAL 3: (Angle: 120 deg - South East) Clean Rounded Outline -->
+<g transform="rotate(120, 130, 130)">
+<path d="M 130 130 C 108 96 102 44 130 18 C 158 44 152 96 130 130 Z" fill="#FFFFFF" stroke="#669C9F" stroke-dasharray="none" stroke-width="2"></path>
+</g>
+<!-- PETAL 4: (Angle: 180 deg - South) Clean Rounded Outline -->
+<g transform="rotate(180, 130, 130)">
+<path d="M 130 130 C 108 96 102 44 130 18 C 158 44 152 96 130 130 Z" fill="#FFFFFF" stroke="#D5E6E9" stroke-width="2"></path>
+</g>
+<!-- PETAL 5: (Angle: 240 deg - South West) Clean Rounded Outline -->
+<g transform="rotate(240, 130, 130)">
+<path d="M 130 130 C 108 96 102 44 130 18 C 158 44 152 96 130 130 Z" fill="#FFFFFF" stroke="#D5E6E9" stroke-width="2"></path>
+</g>
+<!-- PETAL 6: (Angle: 300 deg - North West) Clean Rounded Outline -->
+<g transform="rotate(300, 130, 130)">
+<path d="M 130 130 C 108 96 102 44 130 18 C 158 44 152 96 130 130 Z" fill="#FFFFFF" stroke="#D5E6E9" stroke-width="2"></path>
+</g>
+<!-- CENTER CORE CIRCLE -->
+<circle cx="130" cy="130" fill="#FFFFFF" r="42" stroke="#00788F" stroke-width="2.5"></circle>
+<circle cx="130" cy="130" fill="#EAF5F7" r="37"></circle>
+<!-- Core Typography -->
+<text fill="#005E70" font-family="'Oswald', sans-serif" font-size="14" font-weight="600" letter-spacing="0.5" text-anchor="middle" x="130" y="125">BLOCK 2</text>
+<text fill="#4A5D61" font-family="'Barlow Condensed', sans-serif" font-size="13" font-weight="500" text-anchor="middle" x="130" y="141">Energy</text>
+</svg>
+</div>
+<!-- Reassuring Mindful Caption Under Flower -->
+<div class="mt-4 px-3 py-2.5 rounded-xl bg-surface-alt border border-border-hairline flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-xl flex-shrink-0" data-icon="favorite">favorite</span>
+<p class="font-body-md text-body-md text-text-secondary text-left leading-tight">
+            Your flower only grows. Missed days never take a petal away.
+          </p>
+</div>
+</section>
+<!-- STATS ROW: 3 Compact Statistic Cards -->
+<section aria-label="Progress summary metrics" class="grid grid-cols-3 gap-2.5">
+<!-- Stat 1 -->
+<div class="bg-surface rounded-card p-3 border border-border-hairline soft-card-shadow text-center flex flex-col justify-between">
+<div class="w-7 h-7 rounded-full bg-accent-tint text-primary mx-auto flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-base" data-icon="check">check</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-text-primary leading-none">41</div>
+<div class="font-caption-sm text-caption-sm text-text-secondary mt-1">habits done</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface rounded-card p-3 border border-border-hairline soft-card-shadow text-center flex flex-col justify-between">
+<div class="w-7 h-7 rounded-full bg-info-bg text-info-text mx-auto flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-base" data-icon="date_range">date_range</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-text-primary leading-none">7</div>
+<div class="font-caption-sm text-caption-sm text-text-secondary mt-1">weeks</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface rounded-card p-3 border border-border-hairline soft-card-shadow text-center flex flex-col justify-between">
+<div class="w-7 h-7 rounded-full bg-success-bg text-success-text mx-auto flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-base" data-icon="chat_bubble">chat_bubble</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-text-primary leading-none">3</div>
+<div class="font-caption-sm text-caption-sm text-text-secondary mt-1">check-ins</div>
+</div>
+</section>
+<!-- WEEKLY ACTIVITY CARD -->
+<section class="bg-surface rounded-card p-space-xl soft-card-shadow border border-border-hairline">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h2 class="font-title-md text-title-md text-text-primary">Habits this week</h2>
+<p class="font-caption-sm text-caption-sm text-text-secondary">Consistent rhythm, calm progress</p>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-success-bg text-success-text font-label-md text-label-md font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-success-text"></span>
+<span>84% consistency</span>
+</div>
+</div>
+<!-- 7-day Bar Chart -->
+<div class="grid grid-cols-7 gap-2 items-end pt-3 pb-2 border-b border-border-hairline">
+<!-- Mon: 4 habits -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption-sm text-caption-sm text-text-tertiary">4</span>
+<div class="w-full h-24 bg-surface-alt rounded-full flex flex-col justify-end p-0.5">
+<div class="w-full h-[65%] bg-primary rounded-full transition-all"></div>
+</div>
+<span class="font-label-md text-label-md text-text-secondary">Mon</span>
+</div>
+<!-- Tue: 5 habits -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption-sm text-caption-sm text-text-tertiary">5</span>
+<div class="w-full h-24 bg-surface-alt rounded-full flex flex-col justify-end p-0.5">
+<div class="w-full h-[85%] bg-primary rounded-full transition-all"></div>
+</div>
+<span class="font-label-md text-label-md text-text-secondary">Tue</span>
+</div>
+<!-- Wed: 3 habits -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption-sm text-caption-sm text-text-tertiary">3</span>
+<div class="w-full h-24 bg-surface-alt rounded-full flex flex-col justify-end p-0.5">
+<div class="w-full h-[50%] bg-primary rounded-full transition-all"></div>
+</div>
+<span class="font-label-md text-label-md text-text-secondary">Wed</span>
+</div>
+<!-- Thu: 5 habits -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption-sm text-caption-sm text-text-tertiary">5</span>
+<div class="w-full h-24 bg-surface-alt rounded-full flex flex-col justify-end p-0.5">
+<div class="w-full h-[85%] bg-primary rounded-full transition-all"></div>
+</div>
+<span class="font-label-md text-label-md text-text-secondary">Thu</span>
+</div>
+<!-- Fri: 6 habits (Full) -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption-sm text-caption-sm text-primary font-semibold">6</span>
+<div class="w-full h-24 bg-surface-alt rounded-full flex flex-col justify-end p-0.5">
+<div class="w-full h-full bg-[#00C2E8] rounded-full transition-all shadow-sm"></div>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold">Fri</span>
+</div>
+<!-- Sat: 4 habits -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption-sm text-caption-sm text-text-tertiary">4</span>
+<div class="w-full h-24 bg-surface-alt rounded-full flex flex-col justify-end p-0.5">
+<div class="w-full h-[65%] bg-primary rounded-full transition-all"></div>
+</div>
+<span class="font-label-md text-label-md text-text-secondary">Sat</span>
+</div>
+<!-- Sun (Today): 5 habits -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption-sm text-caption-sm text-accent-pressed font-semibold">5</span>
+<div class="w-full h-24 bg-surface-alt rounded-full flex flex-col justify-end p-0.5 ring-2 ring-accent-fill ring-offset-1">
+<div class="w-full h-[85%] bg-accent-fill rounded-full transition-all"></div>
+</div>
+<span class="font-label-md text-label-md text-accent-pressed font-semibold">Sun</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-accent-fill"></span>
+<span class="font-caption-sm text-caption-sm text-text-secondary">5/5 habits completed today</span>
+</div>
+<span class="font-caption-sm text-caption-sm text-primary font-medium">Daily Streak: 9 Days</span>
+</div>
+</section>
+<!-- Actionable Growth Note Card -->
+<section class="p-4 rounded-card bg-surface border border-border-hairline soft-card-shadow flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-accent-tint flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-text-primary text-base">Next Petal Milestone</div>
+<div class="font-caption-sm text-caption-sm text-text-secondary">2 more habits to complete Petal 2</div>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-full bg-accent-fill text-white font-label-md text-label-md font-semibold active:scale-95 transition-all">
+          View
+        </button>
+</section>
+</div>
+<!-- PERSISTENT BOTTOM NAVIGATION BAR (Exact shared components mapping with exactly 5 tabs: Home, Learn, Habits, Progress, Me) -->
+<!-- Prohibiting border lines as per rule: subtle shadow-based separation only -->
+<nav aria-label="Main Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin pb-safe pt-2 bg-surface shadow-[0_-2px_8px_rgba(0,0,0,0.05)]">
+<!-- 1. Home -->
+<button class="flex flex-col items-center justify-center text-text-tertiary px-space-md py-space-xs hover:text-primary transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Home</span>
+</button>
+<!-- 2. Learn -->
+<button class="flex flex-col items-center justify-center text-text-tertiary px-space-md py-space-xs hover:text-primary transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-2xl" data-icon="menu_book">menu_book</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Learn</span>
+</button>
+<!-- 3. Habits -->
+<button class="flex flex-col items-center justify-center text-text-tertiary px-space-md py-space-xs hover:text-primary transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-2xl" data-icon="check_circle">check_circle</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Habits</span>
+</button>
+<!-- 4. Progress (MANDATORY ACTIVE ITEM: style_active_navigation applied) -->
+<button class="flex flex-col items-center justify-center bg-accent-tint text-primary rounded-full px-space-md py-space-xs font-semibold active:scale-95 transition-all">
+<span class="material-symbols-outlined text-2xl" data-icon="monitoring" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Progress</span>
+</button>
+<!-- 5. Me -->
+<button class="flex flex-col items-center justify-center text-text-tertiary px-space-md py-space-xs hover:text-primary transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Me</span>
+</button>
+</nav>
+</main>
+</body></html>

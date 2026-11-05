@@ -1,0 +1,387 @@
+{
+  "title": "Petal Path",
+  "slug": "petal-path",
+  "domain": "fitness",
+  "style": "bright",
+  "allow3D": false,
+  "features": [
+    "Client accounts with two tiers (group programme, 1:1 coaching) plus a rolling membership",
+    "Date-based weekly unlocks counted from first login (24 weeks, six 4-week blocks); membership unlocks everything on day 1",
+    "Dashboard: this week, today's habits, new unlocks",
+    "Weekly lesson videos, tasks and a PDF resource library",
+    "Habit tracker with a coach habit library plus client-added habits",
+    "Six-petal flower progress model that fills as habits are completed and never goes backwards",
+    "Block check-in forms and a 1:1 onboarding form",
+    "Activity logging by hand and synced from Apple Health / Health Connect (simulated)",
+    "Reminders, unlock and check-in notifications",
+    "Coach view: every client, progress, check-ins, renewal dates, quiet clients, month 5 alerts, retain or revoke access",
+    "Body and food tracking with nutrition targets (1:1 tier)",
+    "Calm, low-clutter design: big buttons, one main action per screen"
+  ],
+  "bannedTerms": [
+    "diagnosis",
+    "ADHD test",
+    "medical advice",
+    "Telehealth",
+    "EHR",
+    "prescription"
+  ],
+  "screenCount": 12,
+  "sharedComponents": {
+    "bottomTabBar": {
+      "tabs": [
+        "Home",
+        "Learn",
+        "Habits",
+        "Progress",
+        "Me"
+      ],
+      "icons": [
+        "house",
+        "play-circle",
+        "check-circle",
+        "flower",
+        "user"
+      ],
+      "note": "Flat white bar, 5 tabs in this order, rounded outline icons 24px with 13px labels. Active tab in accentFill with a small tint pill behind the icon; inactive in text.secondary."
+    },
+    "statusBar": "Top header: 20px edge padding, screen title in display font left, one optional round icon button right.",
+    "controls": "Primary button: full-width pill, 56px tall, accentFill bg, white 16/600 label, pressed = accentPressed, disabled = border bg + tertiary text. Secondary button: pill, 1.5px borderStrong outline, text.primary label. Input: 12px radius, 52px tall, borderStrong border, focus = 2px accentFill ring, error = danger border + helper. Card: white, 20px radius, soft shadow. Chip: pill, accentTint bg, accentFill 13px label."
+  },
+  "screens": [
+    {
+      "name": "welcome",
+      "group": "onboarding",
+      "nav": "none",
+      "states": [
+        "default"
+      ],
+      "purpose": "Sign in and see which plan you are on",
+      "content": "Calm hero photo of a woman stretching on a yoga mat in soft morning light at home, app name Petal Path, tagline 'Small steps. Steady growth.', email field, one big Sign in pill button, small text link 'New here? Start onboarding'. Three plan pills under the hero: Group programme, 1:1 Coaching, Membership."
+    },
+    {
+      "name": "home",
+      "group": "core",
+      "nav": "Home",
+      "states": [
+        "default",
+        "empty"
+      ],
+      "purpose": "See this week, today's habits and new unlocks",
+      "content": "Greeting 'Good morning, Maya' with tier chip '1:1 Coaching'. Focal hero card with gradient: 'Week 7 of 24 - Block 2: Energy', progress bar 3 of 7 days. Section 'Today's habits' with 3 big rows with round check buttons: 'Drink 2L of water' (done), '10 minute walk' (done), 'Protein at breakfast' (to do). Section 'New this week' with 2 unlock cards: lesson video 'Planning meals when your brain is busy' with thumbnail photo and 'Block 2 check-in is open'. One main action: 'Open this week' pill."
+    },
+    {
+      "name": "learn-week",
+      "group": "core",
+      "nav": "Learn",
+      "states": [
+        "default"
+      ],
+      "purpose": "Weekly lesson videos, tasks and resources",
+      "content": "Week selector chips Week 5, 6, 7 (current, active), 8 and 9 shown with lock icon and 'Unlocks Mon 17 Nov'. Focal card: lesson video thumbnail photo of a woman journaling at a kitchen table, play button, 'Lesson 7: Routines that bend, not break - 12 min'. Tasks list with checkboxes: 'Write your 3 non-negotiables', 'Set one phone reminder'. Resources list: PDF rows 'Week 7 workbook (PDF, 4 pages)', 'Easy protein swaps (PDF)'."
+    },
+    {
+      "name": "lesson-detail",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ],
+      "purpose": "Watch a lesson and tick off its tasks",
+      "content": "Back arrow header 'Week 7'. 16:9 video player with real photo poster of a coach talking to camera in a bright studio, play button, 12:04 duration and progress scrubber. Title 'Routines that bend, not break'. Short summary paragraph. Task checklist (2 items). Downloadable PDF row. One big primary button 'Mark lesson complete'."
+    },
+    {
+      "name": "habits",
+      "group": "core",
+      "nav": "Habits",
+      "states": [
+        "default"
+      ],
+      "purpose": "Tick off today's habits",
+      "content": "Date strip Mon-Sun with today highlighted. Focal counter '3 of 5 done today' large numeral with small petal icon. Habit rows as big cards with round check buttons: 'Drink 2L of water' (coach, done), '10 minute walk' (coach, done), 'Protein at breakfast' (coach), 'Lights out by 10:30' (mine, done), 'Stretch 5 minutes' (mine). Each row shows a small source chip 'From coach' or 'Mine' and a 7-day streak dots line. One main action: 'Add a habit' pill."
+    },
+    {
+      "name": "habit-library",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ],
+      "purpose": "Pick habits from the coach library or create your own",
+      "content": "Sheet-style screen with close icon, title 'Add a habit'. Category chips: Movement, Food, Sleep, Calm. Library rows with plus buttons: 'Eat a portion of veg with lunch', 'Step outside before 10am', 'Phone out of the bedroom', 'Two-minute breathing break'. Divider 'Or create your own' with text input 'Habit name' and day chips Mon-Sun. One primary button 'Save habit'."
+    },
+    {
+      "name": "progress-flower",
+      "group": "core",
+      "nav": "Progress",
+      "states": [
+        "default"
+      ],
+      "purpose": "See growth as a six-petal flower",
+      "content": "Focal element: large flat 2D flower with 6 petals, one per block, petals 1 fully filled in accent, petal 2 filled 60%, petals 3-6 outline only, centre text 'Block 2'. Caption 'Your flower only grows. Missed days never take a petal away.' Below: stats row '41 habits done', '7 weeks', '3 check-ins'. Segmented control 'Flower | Activity'. Card 'Habits this week' small bar chart Mon-Sun."
+    },
+    {
+      "name": "activity-log",
+      "group": "detail",
+      "nav": "Progress",
+      "states": [
+        "default"
+      ],
+      "purpose": "Log activity by hand or sync from the health app",
+      "content": "Focal card: today's steps '6,842' big numeral with ring toward 8,000 goal. Button row: 'Sync health data' secondary pill with heart icon, 'Last synced 08:12'. Activity list: 'Walk - 32 min - Synced', 'Strength session - 40 min - Logged by hand', 'Yoga - 20 min - Synced'. Body card: weight 68.4 kg, waist 78 cm. Food card: 'Protein 92 / 110 g' progress bar. One main action: 'Log activity' pill."
+    },
+    {
+      "name": "check-in",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ],
+      "purpose": "Complete the block check-in form",
+      "content": "Header 'Block 2 check-in' with step '2 of 4' progress bar. Question 'How has your energy been this block?' with 5 big emoji-free option buttons from 'Very low' to 'Great', option 'Steady' selected. Question 'What got in the way?' multi-line input with sample text. Slider 'Sleep quality' 1-10 at 7. One primary button 'Next'."
+    },
+    {
+      "name": "coach-clients",
+      "group": "settings",
+      "nav": "none",
+      "states": [
+        "default"
+      ],
+      "purpose": "Coach sees every client and acts on alerts",
+      "content": "Header 'Clients' with back arrow and search. Filter chips: All 28, Quiet 3, Month 5 4, Check-ins due 5. Focal alert card in warning tint: '4 clients reach month 5 this week - plan renewals'. Client rows with real photo avatars: 'Maya Collins - 1:1 - Week 7 - check-in submitted', 'Priya Shah - Group - Week 19 - Month 5 alert - renews 2 Dec', 'Hannah Lee - Group - Week 4 - Quiet 9 days', 'Zoe Martin - Membership - active'. Each row has a small mini flower progress icon and a chevron. Row action buttons Retain and Revoke on the selected row."
+    },
+    {
+      "name": "profile",
+      "group": "settings",
+      "nav": "Me",
+      "states": [
+        "default"
+      ],
+      "purpose": "Plan, targets, reminders and privacy",
+      "content": "Avatar real photo of a smiling woman in her thirties, name Maya Collins, chip '1:1 Coaching - renews 12 Jan'. Focal card 'Nutrition targets': 1,850 kcal, Protein 110 g, Fibre 25 g. Settings rows: 'Onboarding form - completed', 'Reminders - 08:00 and 19:30' with toggles for 'Habit reminders', 'New unlocks', 'Check-ins'. Row 'Health data - Connected' and 'Privacy and my data'. Row 'Coach view' with shield icon."
+    },
+    {
+      "name": "home-empty",
+      "group": "core",
+      "nav": "Home",
+      "states": [
+        "empty"
+      ],
+      "purpose": "First login, nothing unlocked yet besides week 1",
+      "content": "Greeting 'Welcome, Maya' with chip 'Group programme'. Focal card: real photo of a single seedling in a pot on a sunny windowsill, 'Week 1 starts today. One small step is enough.' Empty habits area: 'No habits yet' with text 'Pick your first habit to start your flower.' One primary button 'Choose my first habit'."
+    }
+  ],
+  "designSystem": {
+    "variant": "P29",
+    "theme": "light",
+    "frame": "393x852 mobile, top inset 59px, bottom inset 34px",
+    "color": {
+      "background": "#F4FBFC",
+      "surface": "#FFFFFF",
+      "surfaceAlt": "#EAF5F7",
+      "accent": "#00C2E8",
+      "accentFill": "#00788F",
+      "accentTint": "#DBF6FC",
+      "accentPressed": "#006F85",
+      "support": "#FF7AB6",
+      "text": {
+        "primary": "#0C1C1F",
+        "secondary": "#4A5D61",
+        "tertiary": "#66767A"
+      },
+      "border": "#D5E6E9",
+      "success": "#16A34A",
+      "warning": "#D97706",
+      "danger": "#DC2626",
+      "gradient": [
+        "#00788F",
+        "#006F85"
+      ],
+      "statusOn": {
+        "warning": {
+          "fg": "#A75906",
+          "tint": "#FAEFE1"
+        },
+        "success": {
+          "fg": "#0E7C3A",
+          "tint": "#E3F4E9"
+        },
+        "danger": {
+          "fg": "#CE2020",
+          "tint": "#FBE5E5"
+        },
+        "info": {
+          "fg": "#00748A",
+          "tint": "#E0EFF2"
+        }
+      },
+      "supportStrong": "#FF529E",
+      "borderStrong": "#669C9F"
+    },
+    "type": {
+      "fontFamily": "Barlow Condensed",
+      "displayFamily": "Oswald",
+      "numeralFamily": "Oswald",
+      "display": "32 / 700 / -0.02em",
+      "title": "20 / 600",
+      "body": "16 / 400",
+      "label": "14 / 500",
+      "caption": "13 / 500",
+      "minSize": "12px (13px chips and tags, 14px safety or legal text)",
+      "scaleRule": "Use only the 5 declared sizes (display, title, body, label, caption)."
+    },
+    "radius": {
+      "card": 20,
+      "control": 14,
+      "input": 12,
+      "pill": 999
+    },
+    "spacing": "8pt scale (4, 8, 12, 16, 24, 32); edge padding 20px",
+    "elevation": "card = 0 1px 2px rgba(0,0,0,.04) + 0 8px 24px rgba(0,0,0,.06)",
+    "icons": "Lucide-style rounded outline, 24px, 1.75 stroke",
+    "a11y": "white labels only on accentFill; tap targets >= 44pt; text on gradient >= 4.5:1"
+  },
+  "tokenCheck": {
+    "results": [
+      {
+        "pair": "text.primary on background",
+        "ratio": 16.69,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.primary on surface",
+        "ratio": 17.48,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.secondary on background",
+        "ratio": 6.62,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.secondary on surface",
+        "ratio": 6.93,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.tertiary on background",
+        "ratio": 4.17,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#66767A",
+        "after": 4.52
+      },
+      {
+        "pair": "text.tertiary on surface",
+        "ratio": 4.73,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "white label on accentFill (buttons)",
+        "ratio": 4.62,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "accentFill text on accentTint (chips, selected)",
+        "ratio": 4.09,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#00788F",
+        "after": 4.56
+      },
+      {
+        "pair": "accentFill as link text on background",
+        "ratio": 4.91,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "white on hero gradient (both stops)",
+        "ratio": 5.14,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "warning text on its tint and on surface",
+        "ratio": 2.81,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#A75906",
+        "after": 4.54
+      },
+      {
+        "pair": "success text on its tint and on surface",
+        "ratio": 2.89,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#0E7C3A",
+        "after": 4.64
+      },
+      {
+        "pair": "danger text on its tint and on surface",
+        "ratio": 4.01,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#CE2020",
+        "after": 4.53
+      },
+      {
+        "pair": "info text on its tint and on surface",
+        "ratio": 4.36,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#00748A",
+        "after": 4.6
+      },
+      {
+        "pair": "support as chart line / icon on surface (non-text 3:1)",
+        "ratio": 2.41,
+        "target": 3.0,
+        "pass": false,
+        "fixedTo": "#FF529E",
+        "after": 3.02
+      },
+      {
+        "pair": "input / control border on surface (non-text 3:1)",
+        "ratio": 1.29,
+        "target": 3.0,
+        "pass": false,
+        "fixedTo": "#669C9F",
+        "after": 3.08
+      }
+    ],
+    "changed": {
+      "text.tertiary": {
+        "from": "#6A7C80",
+        "to": "#66767A"
+      },
+      "accentFill": {
+        "from": "#008099",
+        "to": "#00788F"
+      }
+    },
+    "passed": true
+  }
+}

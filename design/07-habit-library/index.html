@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add a habit - Petal Path</title>
+<!-- Google Fonts: Oswald & Barlow Condensed -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Play CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim as specified in Design System -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#001f27",
+            "surface-tint": "#00687c",
+            "accent-tint": "#DBF6FC",
+            "warning-bg": "#FAEFE1",
+            "on-tertiary-container": "#ffede0",
+            "primary-container": "#00788f",
+            "text-tertiary": "#66767A",
+            "on-primary": "#ffffff",
+            "success-bg": "#E3F4E9",
+            "control-border": "#669C9F",
+            "danger-text": "#CE2020",
+            "border-hairline": "#D5E6E9",
+            "surface-container-low": "#f1f4f6",
+            "surface-bright": "#f7fafc",
+            "on-primary-fixed": "#001f27",
+            "primary-fixed": "#b0ecff",
+            "tertiary-fixed": "#ffdcbe",
+            "on-background": "#181c1e",
+            "hero-gradient-start": "#00788F",
+            "text-secondary": "#4A5D61",
+            "secondary": "#00677d",
+            "on-error-container": "#93000a",
+            "hero-gradient-end": "#006F85",
+            "surface-container-high": "#e5e9ea",
+            "surface": "#FFFFFF",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#2d1600",
+            "surface-container": "#ebeef0",
+            "surface-alt": "#EAF5F7",
+            "on-secondary-fixed-variant": "#004e5e",
+            "surface-container-highest": "#e0e3e5",
+            "info-bg": "#E0EFF2",
+            "support": "#FF7AB6",
+            "on-tertiary-fixed-variant": "#6a3c00",
+            "on-primary-fixed-variant": "#004e5e",
+            "surface-variant": "#e0e3e5",
+            "secondary-fixed": "#b2ebff",
+            "success-text": "#0E7C3A",
+            "tertiary-fixed-dim": "#ffb871",
+            "outline-variant": "#bec8cc",
+            "info-text": "#00748A",
+            "secondary-fixed-dim": "#3bd7fe",
+            "tertiary": "#7d4804",
+            "accent-pressed": "#006F85",
+            "support-strong": "#FF529E",
+            "accent-fill": "#00788F",
+            "inverse-on-surface": "#eef1f3",
+            "text-primary": "#0C1C1F",
+            "tertiary-container": "#9a601e",
+            "surface-container-lowest": "#ffffff",
+            "background": "#F4FBFC",
+            "on-surface-variant": "#3e484c",
+            "warning-text": "#A75906",
+            "error-container": "#ffdad6",
+            "primary": "#005e70",
+            "on-primary-container": "#dbf5ff",
+            "on-secondary-container": "#005a6d",
+            "outline": "#6e797c",
+            "inverse-surface": "#2d3133",
+            "primary-fixed-dim": "#7cd3ec",
+            "on-surface": "#181c1e",
+            "on-error": "#ffffff",
+            "inverse-primary": "#7cd3ec",
+            "danger-bg": "#FBE5E5",
+            "secondary-container": "#3bd7fe",
+            "surface-dim": "#d7dadc",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "20": "20px",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "space-xl": "1.5rem",
+            "margin": "1.25rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-2xl": "2rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "caption-sm": ["Barlow Condensed"],
+            "title-md": ["Oswald"],
+            "headline-lg": ["Oswald"],
+            "label-md": ["Barlow Condensed"],
+            "body-md": ["Barlow Condensed"]
+          },
+          "fontSize": {
+            "caption-sm": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+            "title-md": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+          },
+          "boxShadow": {
+            "soft-card": "0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Hide scrollbar for category row */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container flex items-center justify-center min-h-screen p-0 md:p-6 text-text-primary antialiased selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Viewport Canvas Frame (393px × 852px) -->
+<main class="w-full max-w-[393px] h-[852px] bg-background relative flex flex-col overflow-hidden shadow-2xl md:rounded-[44px] border border-border-hairline">
+<!-- Top System Sheet Drag Indicator & Safe Margin -->
+<header class="pt-4 px-margin pb-2 bg-background flex flex-col shrink-0 z-10">
+<!-- Sheet Grabber Bar -->
+<div class="w-10 h-1 bg-border-hairline rounded-full mx-auto mb-3"></div>
+<!-- Sheet Header Row with Close button -->
+<div class="flex items-center justify-between">
+<div>
+<span class="font-caption-sm text-caption-sm text-text-tertiary tracking-wide uppercase block">Coaching Plan</span>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Add a habit</h1>
+</div>
+<button aria-label="Close dialog" class="w-10 h-10 rounded-full bg-surface border border-border-hairline flex items-center justify-center text-text-secondary hover:bg-accent-tint hover:text-primary active:scale-95 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="flex-1 overflow-y-auto px-margin space-y-5 pb-28 pt-1 no-scrollbar">
+<!-- Category Filter Chips -->
+<nav aria-label="Habit categories" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+<button class="shrink-0 h-9 px-4 rounded-full bg-accent-tint border border-primary-container text-primary-container font-label-md text-label-md font-semibold transition-transform active:scale-95 shadow-sm" type="button">
+          Movement
+        </button>
+<button class="shrink-0 h-9 px-4 rounded-full bg-surface border border-border-hairline text-text-secondary hover:border-control-border font-label-md text-label-md transition-colors active:scale-95" type="button">
+          Food
+        </button>
+<button class="shrink-0 h-9 px-4 rounded-full bg-surface border border-border-hairline text-text-secondary hover:border-control-border font-label-md text-label-md transition-colors active:scale-95" type="button">
+          Sleep
+        </button>
+<button class="shrink-0 h-9 px-4 rounded-full bg-surface border border-border-hairline text-text-secondary hover:border-control-border font-label-md text-label-md transition-colors active:scale-95" type="button">
+          Calm
+        </button>
+</nav>
+<!-- Coach Library Section -->
+<section aria-labelledby="coach-library-heading" class="space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="font-caption-sm text-caption-sm text-text-tertiary uppercase tracking-wider font-semibold" id="coach-library-heading">
+            From your coach's library
+          </h2>
+<span class="font-caption-sm text-caption-sm text-primary font-semibold">4 templates</span>
+</div>
+<div class="space-y-2.5">
+<!-- Library Item 1: Veg with lunch -->
+<article class="bg-surface rounded-20 p-3.5 border border-border-hairline shadow-soft-card flex items-center justify-between gap-3 hover:border-control-border transition-colors group">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-accent-tint text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">restaurant</span>
+</div>
+<div class="truncate">
+<h3 class="font-body-md text-body-md font-semibold text-text-primary leading-snug truncate">Eat a portion of veg with lunch</h3>
+<p class="font-caption-sm text-caption-sm text-text-tertiary">Nutrition · Once daily</p>
+</div>
+</div>
+<button aria-label="Add habit: Eat a portion of veg with lunch" class="w-9 h-9 rounded-full border border-control-border text-primary-container flex items-center justify-center shrink-0 hover:bg-accent-tint hover:border-primary-container active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</article>
+<!-- Library Item 2: Outside morning sun -->
+<article class="bg-surface rounded-20 p-3.5 border border-border-hairline shadow-soft-card flex items-center justify-between gap-3 hover:border-control-border transition-colors group">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-warning-bg text-warning-text flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">wb_sunny</span>
+</div>
+<div class="truncate">
+<h3 class="font-body-md text-body-md font-semibold text-text-primary leading-snug truncate">Step outside before 10am</h3>
+<p class="font-caption-sm text-caption-sm text-text-tertiary">Circadian rhythm · Morning</p>
+</div>
+</div>
+<button aria-label="Add habit: Step outside before 10am" class="w-9 h-9 rounded-full border border-control-border text-primary-container flex items-center justify-center shrink-0 hover:bg-accent-tint hover:border-primary-container active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</article>
+<!-- Library Item 3: Sleep / Phone out -->
+<article class="bg-surface rounded-20 p-3.5 border border-border-hairline shadow-soft-card flex items-center justify-between gap-3 hover:border-control-border transition-colors group">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-surface-alt text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">bedtime</span>
+</div>
+<div class="truncate">
+<h3 class="font-body-md text-body-md font-semibold text-text-primary leading-snug truncate">Phone out of the bedroom</h3>
+<p class="font-caption-sm text-caption-sm text-text-tertiary">Sleep hygiene · Evening</p>
+</div>
+</div>
+<button aria-label="Add habit: Phone out of the bedroom" class="w-9 h-9 rounded-full border border-control-border text-primary-container flex items-center justify-center shrink-0 hover:bg-accent-tint hover:border-primary-container active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</article>
+<!-- Library Item 4: Breathing break -->
+<article class="bg-surface rounded-20 p-3.5 border border-border-hairline shadow-soft-card flex items-center justify-between gap-3 hover:border-control-border transition-colors group">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-accent-tint text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">self_improvement</span>
+</div>
+<div class="truncate">
+<h3 class="font-body-md text-body-md font-semibold text-text-primary leading-snug truncate">Two-minute breathing break</h3>
+<p class="font-caption-sm text-caption-sm text-text-tertiary">Stress relief · Anytime</p>
+</div>
+</div>
+<button aria-label="Add habit: Two-minute breathing break" class="w-9 h-9 rounded-full border border-control-border text-primary-container flex items-center justify-center shrink-0 hover:bg-accent-tint hover:border-primary-container active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</article>
+</div>
+</section>
+<!-- Clean Divider with Centered Label -->
+<div class="relative py-2 flex items-center justify-center">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-border-hairline"></div>
+</div>
+<span class="relative px-3 bg-background font-caption-sm text-caption-sm text-text-tertiary font-semibold uppercase tracking-wide">
+          Or create your own
+        </span>
+</div>
+<!-- Custom Habit Form Card -->
+<section class="bg-surface rounded-20 p-4 border border-border-hairline shadow-soft-card space-y-4">
+<!-- Text Input Field -->
+<div>
+<label class="block font-label-md text-label-md text-text-primary font-semibold mb-1.5" for="habit-name-input">
+            Habit name
+          </label>
+<div class="relative">
+<input class="w-full h-[52px] rounded-xl border border-control-border bg-background px-3.5 text-text-primary font-body-md text-body-md placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent transition-all" id="habit-name-input" name="habit-name" placeholder="e.g. Fill my water bottle" type="text"/>
+</div>
+</div>
+<!-- Frequency Selector -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-md text-label-md text-text-primary font-semibold block">
+              Frequency
+            </label>
+<span class="font-caption-sm text-caption-sm text-text-tertiary">Weekdays active</span>
+</div>
+<!-- 7-day pill switches (Mon-Fri selected, Sat-Sun unselected) -->
+<div aria-label="Select days of the week" class="grid grid-cols-7 gap-1.5" role="group">
+<!-- Mon (Selected) -->
+<button aria-pressed="true" class="h-10 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center shadow-sm active:scale-95 transition-transform" type="button">
+              Mon
+            </button>
+<!-- Tue (Selected) -->
+<button aria-pressed="true" class="h-10 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center shadow-sm active:scale-95 transition-transform" type="button">
+              Tue
+            </button>
+<!-- Wed (Selected) -->
+<button aria-pressed="true" class="h-10 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center shadow-sm active:scale-95 transition-transform" type="button">
+              Wed
+            </button>
+<!-- Thu (Selected) -->
+<button aria-pressed="true" class="h-10 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center shadow-sm active:scale-95 transition-transform" type="button">
+              Thu
+            </button>
+<!-- Fri (Selected) -->
+<button aria-pressed="true" class="h-10 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center shadow-sm active:scale-95 transition-transform" type="button">
+              Fri
+            </button>
+<!-- Sat (Unselected) -->
+<button aria-pressed="false" class="h-10 rounded-xl bg-background border border-border-hairline text-text-secondary hover:border-control-border font-label-md text-label-md flex items-center justify-center active:scale-95 transition-colors" type="button">
+              Sat
+            </button>
+<!-- Sun (Unselected) -->
+<button aria-pressed="false" class="h-10 rounded-xl bg-background border border-border-hairline text-text-secondary hover:border-control-border font-label-md text-label-md flex items-center justify-center active:scale-95 transition-colors" type="button">
+              Sun
+            </button>
+</div>
+</div>
+<!-- Gentle Coach Reminder Hint -->
+<div class="p-3 bg-surface-alt rounded-xl border border-border-hairline flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">spa</span>
+<p class="font-caption-sm text-caption-sm text-text-secondary">
+            Tip: Micro-habits done 5 days in a row build steady automatic momentum.
+          </p>
+</div>
+</section>
+</div>
+<!-- Fixed Bottom Safe Area with Single Primary CTA -->
+<div class="absolute bottom-0 left-0 w-full px-margin pb-7 pt-4 bg-gradient-to-t from-background via-background/95 to-transparent z-20 flex flex-col items-center">
+<button class="w-full h-[56px] rounded-full bg-primary-container text-on-primary font-title-md text-title-md font-bold tracking-tight shadow-md hover:bg-accent-pressed active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="button">
+<span>Save habit</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Interactive Day Toggle Script -->
+<script>
+    document.querySelectorAll('[role="group"] button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isPressed = button.getAttribute('aria-pressed') === 'true';
+        if (isPressed) {
+          button.setAttribute('aria-pressed', 'false');
+          button.className = 'h-10 rounded-xl bg-background border border-border-hairline text-text-secondary hover:border-control-border font-label-md text-label-md flex items-center justify-center active:scale-95 transition-colors';
+        } else {
+          button.setAttribute('aria-pressed', 'true');
+          button.className = 'h-10 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center shadow-sm active:scale-95 transition-transform';
+        }
+      });
+    });
+
+    // Template row quick pick interaction
+    document.querySelectorAll('article button').forEach(plusBtn => {
+      plusBtn.addEventListener('click', (e) => {
+        const row = e.currentTarget.closest('article');
+        const habitText = row.querySelector('h3').textContent;
+        const inputField = document.getElementById('habit-name-input');
+        inputField.value = habitText;
+        inputField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        inputField.focus();
+      });
+    });
+  </script>
+</body></html>

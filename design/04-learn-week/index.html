@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Petal Path - Learn</title>
+<!-- Google Fonts: Oswald & Barlow Condensed -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "accent-tint": "#DBF6FC",
+            "primary": "#005e70",
+            "outline-variant": "#bec8cc",
+            "surface-container-high": "#e5e9ea",
+            "primary-fixed": "#b0ecff",
+            "surface-bright": "#f7fafc",
+            "on-tertiary-fixed-variant": "#6a3c00",
+            "support-strong": "#FF529E",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#2d3133",
+            "on-secondary-fixed": "#001f27",
+            "hero-gradient-end": "#006F85",
+            "success-bg": "#E3F4E9",
+            "secondary-fixed": "#b2ebff",
+            "secondary-fixed-dim": "#3bd7fe",
+            "danger-text": "#CE2020",
+            "on-tertiary-fixed": "#2d1600",
+            "info-text": "#00748A",
+            "surface-tint": "#00687c",
+            "inverse-on-surface": "#eef1f3",
+            "surface": "#FFFFFF",
+            "support": "#FF7AB6",
+            "secondary": "#00677d",
+            "accent-pressed": "#006F85",
+            "on-error": "#ffffff",
+            "surface-variant": "#e0e3e5",
+            "surface-dim": "#d7dadc",
+            "control-border": "#669C9F",
+            "on-secondary-container": "#005a6d",
+            "secondary-container": "#3bd7fe",
+            "primary-fixed-dim": "#7cd3ec",
+            "tertiary-container": "#9a601e",
+            "surface-container-low": "#f1f4f6",
+            "warning-bg": "#FAEFE1",
+            "warning-text": "#A75906",
+            "text-primary": "#0C1C1F",
+            "outline": "#6e797c",
+            "on-background": "#181c1e",
+            "text-tertiary": "#66767A",
+            "border-hairline": "#D5E6E9",
+            "tertiary-fixed-dim": "#ffb871",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#ffede0",
+            "on-surface-variant": "#3e484c",
+            "inverse-primary": "#7cd3ec",
+            "info-bg": "#E0EFF2",
+            "tertiary-fixed": "#ffdcbe",
+            "success-text": "#0E7C3A",
+            "on-secondary-fixed-variant": "#004e5e",
+            "surface-container": "#ebeef0",
+            "primary-container": "#00788f",
+            "hero-gradient-start": "#00788F",
+            "on-surface": "#181c1e",
+            "on-secondary": "#ffffff",
+            "background": "#F4FBFC",
+            "on-primary-fixed": "#001f27",
+            "surface-container-lowest": "#ffffff",
+            "text-secondary": "#4A5D61",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#e0e3e5",
+            "on-primary-container": "#dbf5ff",
+            "tertiary": "#7d4804",
+            "danger-bg": "#FBE5E5",
+            "surface-alt": "#EAF5F7",
+            "accent-fill": "#00788F",
+            "on-primary-fixed-variant": "#004e5e",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-2xl": "2rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1.25rem"
+          },
+          "fontFamily": {
+            "title-md": ["Oswald", "sans-serif"],
+            "headline-lg": ["Oswald", "sans-serif"],
+            "body-md": ["Barlow Condensed", "sans-serif"],
+            "label-md": ["Barlow Condensed", "sans-serif"],
+            "caption-sm": ["Barlow Condensed", "sans-serif"]
+          },
+          "fontSize": {
+            "title-md": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+            "caption-sm": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-shadow-soft {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex justify-center selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Frame Container (393x852 proportion) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-28">
+<!-- Top App Bar (Shared Component Anchor) -->
+<header class="sticky top-0 left-0 w-full z-40 flex justify-between items-center px-margin h-14 bg-surface shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">spa</span>
+<span class="font-title-md text-title-md text-primary tracking-tight font-bold">Petal Path</span>
+</div>
+<button aria-label="Notifications" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-accent-tint text-text-secondary hover:text-accent-pressed transition-colors duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin pt-4 flex flex-col gap-6">
+<!-- Screen Header -->
+<section class="flex flex-col gap-1">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Learn</h1>
+<p class="font-body-md text-body-md text-text-tertiary">Nurturing weekly modules for grounded habit design.</p>
+</section>
+<!-- Horizontal Week Selector Chips -->
+<section class="flex flex-col gap-2">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 -mx-margin px-margin">
+<!-- Week 5 -->
+<button class="shrink-0 px-4 py-2 rounded-full border border-border-hairline bg-surface text-text-secondary font-label-md text-label-md hover:bg-surface-alt transition-colors duration-150 flex items-center gap-1.5 active:scale-95" type="button">
+<span>Week 5</span>
+<span class="material-symbols-outlined text-success-text text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<!-- Week 6 -->
+<button class="shrink-0 px-4 py-2 rounded-full border border-border-hairline bg-surface text-text-secondary font-label-md text-label-md hover:bg-surface-alt transition-colors duration-150 flex items-center gap-1.5 active:scale-95" type="button">
+<span>Week 6</span>
+<span class="material-symbols-outlined text-success-text text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<!-- Week 7 (ACTIVE / SELECTED) -->
+<button class="shrink-0 px-4 py-2 rounded-full bg-accent-fill text-on-primary font-label-md text-label-md shadow-sm flex items-center gap-1.5 active:scale-95" type="button">
+<span>Week 7</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary"></span>
+</button>
+<!-- Week 8 (Locked) -->
+<button class="shrink-0 px-4 py-2 rounded-full border border-border-hairline bg-surface text-text-tertiary opacity-75 font-label-md text-label-md flex items-center gap-1.5 active:scale-95" type="button">
+<span>Week 8</span>
+<span class="material-symbols-outlined text-text-tertiary text-[16px]">lock</span>
+</button>
+<!-- Week 9 (Locked) -->
+<button class="shrink-0 px-4 py-2 rounded-full border border-border-hairline bg-surface text-text-tertiary opacity-75 font-label-md text-label-md flex items-center gap-1.5 active:scale-95" type="button">
+<span>Week 9</span>
+<span class="material-symbols-outlined text-text-tertiary text-[16px]">lock</span>
+</button>
+</div>
+<!-- Unlock Notice Caption -->
+<p class="font-caption-sm text-caption-sm text-text-tertiary flex items-center gap-1 pt-0.5">
+<span class="material-symbols-outlined text-[15px] text-text-tertiary">schedule</span>
+          Week 8 unlocks Mon 17 Nov
+        </p>
+</section>
+<!-- Focal Hero Card: Lesson Video -->
+<section class="flex flex-col">
+<div class="bg-surface rounded-[20px] custom-shadow-soft overflow-hidden border border-border-hairline flex flex-col group transition-all duration-200">
+<!-- Thumbnail with Play Overlay -->
+<div class="relative w-full h-[210px] overflow-hidden bg-surface-dim">
+<img alt="Woman journaling peacefully at a wooden breakfast table" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1UEamlmK_rnFXvwEs8YqQLrpM27aZZpNkBaHv1Ni6kQ1opIYoq94oxNwMtKZpqzLsE_0DcDlW0DTZX7kinN4pGwyGgHOKjLE4svfaxDhdWKxJt_DHS4QcHg9REhNO3Ck-K3gJWq14v67c7C6qC_88j2R4h_igZC0NcEMgRn7EoGUKYMZrDub60w1kCxfHh9RmnDLtdIXBdUMPgScXUfWQLYn-C5-5H03sPg5CoUDI7oJU-KzybrBbe69Nc3"/>
+<div class="absolute inset-0 bg-black/15 flex items-center justify-center">
+<button aria-label="Play Lesson" class="w-14 h-14 rounded-full bg-accent-fill/90 hover:bg-accent-fill text-surface flex items-center justify-center shadow-lg transition-transform duration-200 hover:scale-110 active:scale-95 backdrop-blur-sm" type="button">
+<span class="material-symbols-outlined text-[32px] ml-1 text-on-primary" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Duration Badge -->
+<div class="absolute bottom-3 right-3 bg-surface/90 backdrop-blur-md px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm border border-white/40">
+<span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
+<span class="font-caption-sm text-caption-sm text-text-primary font-medium">12 min</span>
+</div>
+</div>
+<!-- Video Details -->
+<div class="p-space-lg flex flex-col gap-2">
+<div class="inline-flex items-center gap-1.5 self-start bg-accent-tint text-accent-pressed px-2.5 py-0.5 rounded-full font-caption-sm text-caption-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+              Core Module
+            </div>
+<h2 class="font-title-md text-title-md text-text-primary">Lesson 7: Routines that bend, not break</h2>
+<p class="font-body-md text-body-md text-text-secondary leading-snug">Discover how flexible micro-adjustments prevent all-or-nothing fatigue when life gets hectic.</p>
+</div>
+</div>
+</section>
+<!-- Tasks Section -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-text-primary tracking-tight">Tasks</h3>
+<span class="font-caption-sm text-caption-sm text-text-tertiary">0 of 2 completed</span>
+</div>
+<div class="bg-surface rounded-[20px] custom-shadow-soft border border-border-hairline p-space-sm flex flex-col divide-y divide-border-hairline">
+<!-- Task 1 -->
+<label class="flex items-center gap-3.5 p-3 cursor-pointer select-none rounded-xl hover:bg-surface-bright transition-colors duration-150">
+<input class="sr-only peer" id="task-1" type="checkbox"/>
+<div class="w-6 h-6 rounded-full border-2 border-control-border peer-checked:border-accent-fill peer-checked:bg-accent-fill flex items-center justify-center transition-all duration-150 text-transparent peer-checked:text-white shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<span class="font-body-md text-body-md text-text-primary peer-checked:text-text-tertiary peer-checked:line-through transition-colors">
+              Write your 3 non-negotiables
+            </span>
+</label>
+<!-- Task 2 -->
+<label class="flex items-center gap-3.5 p-3 cursor-pointer select-none rounded-xl hover:bg-surface-bright transition-colors duration-150">
+<input class="sr-only peer" id="task-2" type="checkbox"/>
+<div class="w-6 h-6 rounded-full border-2 border-control-border peer-checked:border-accent-fill peer-checked:bg-accent-fill flex items-center justify-center transition-all duration-150 text-transparent peer-checked:text-white shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<span class="font-body-md text-body-md text-text-primary peer-checked:text-text-tertiary peer-checked:line-through transition-colors">
+              Set one phone reminder
+            </span>
+</label>
+</div>
+</section>
+<!-- Resources Section -->
+<section class="flex flex-col gap-3">
+<h3 class="font-title-md text-title-md text-text-primary tracking-tight">Resources</h3>
+<div class="bg-surface rounded-[20px] custom-shadow-soft border border-border-hairline p-space-sm flex flex-col divide-y divide-border-hairline">
+<!-- Resource 1 -->
+<a class="flex items-center justify-between p-3 rounded-xl hover:bg-surface-bright transition-colors duration-150 group active:scale-[0.99]" href="#">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-lg bg-accent-tint text-accent-pressed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-text-primary group-hover:text-primary transition-colors">Week 7 workbook (PDF, 4 pages)</span>
+<span class="font-caption-sm text-caption-sm text-text-tertiary">2.4 MB · Printable guide</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors text-[20px]">download</span>
+</a>
+<!-- Resource 2 -->
+<a class="flex items-center justify-between p-3 rounded-xl hover:bg-surface-bright transition-colors duration-150 group active:scale-[0.99]" href="#">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-lg bg-accent-tint text-accent-pressed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-text-primary group-hover:text-primary transition-colors">Easy protein swaps (PDF)</span>
+<span class="font-caption-sm text-caption-sm text-text-tertiary">1.1 MB · Quick reference card</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors text-[20px]">download</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Persistent Shared Component) -->
+<!-- Exactly 5 destinations: Home, Learn, Habits, Progress, Me. 'Learn' is actively selected. -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin pb-safe pt-2 bg-surface shadow-[0_-1px_3px_rgba(0,0,0,0.04)]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-text-tertiary dark:text-outline-variant px-space-md py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Home</span>
+</a>
+<!-- Learn (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-accent-tint dark:bg-primary-container text-primary dark:text-on-primary-container rounded-full px-space-md py-space-xs font-semibold hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Learn</span>
+</a>
+<!-- Habits -->
+<a class="flex flex-col items-center justify-center text-text-tertiary dark:text-outline-variant px-space-md py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Habits</span>
+</a>
+<!-- Progress -->
+<a class="flex flex-col items-center justify-center text-text-tertiary dark:text-outline-variant px-space-md py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">monitoring</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Progress</span>
+</a>
+<!-- Me -->
+<a class="flex flex-col items-center justify-center text-text-tertiary dark:text-outline-variant px-space-md py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">person</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Me</span>
+</a>
+</nav>
+</div>
+<!-- Interactive feedback for task counter -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const taskCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+      const counterText = document.querySelector('section:has(#task-1) span.font-caption-sm');
+
+      function updateCounter() {
+        if (!counterText) return;
+        const total = taskCheckboxes.length;
+        const completed = Array.from(taskCheckboxes).filter(cb => cb.checked).length;
+        counterText.textContent = `${completed} of ${total} completed`;
+      }
+
+      taskCheckboxes.forEach(cb => {
+        cb.addEventListener('change', updateCounter);
+      });
+    });
+  </script>
+</body></html>

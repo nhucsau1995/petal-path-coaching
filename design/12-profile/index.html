@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Petal Path - Me</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "warning-text": "#A75906",
+            "on-surface": "#181c1e",
+            "on-primary": "#ffffff",
+            "surface-alt": "#EAF5F7",
+            "on-primary-fixed-variant": "#004e5e",
+            "tertiary-container": "#9a601e",
+            "outline": "#6e797c",
+            "surface-container-low": "#f1f4f6",
+            "on-secondary-container": "#005a6d",
+            "secondary": "#00677d",
+            "surface-container-high": "#e5e9ea",
+            "success-bg": "#E3F4E9",
+            "background": "#F4FBFC",
+            "surface-container": "#ebeef0",
+            "hero-gradient-start": "#00788F",
+            "primary-fixed": "#b0ecff",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a",
+            "secondary-container": "#3bd7fe",
+            "tertiary-fixed-dim": "#ffb871",
+            "tertiary-fixed": "#ffdcbe",
+            "primary": "#005e70",
+            "secondary-fixed": "#b2ebff",
+            "on-primary-container": "#dbf5ff",
+            "success-text": "#0E7C3A",
+            "accent-pressed": "#006F85",
+            "text-tertiary": "#66767A",
+            "inverse-surface": "#2d3133",
+            "accent-tint": "#DBF6FC",
+            "text-primary": "#0C1C1F",
+            "inverse-on-surface": "#eef1f3",
+            "info-bg": "#E0EFF2",
+            "danger-text": "#CE2020",
+            "on-surface-variant": "#3e484c",
+            "on-tertiary-fixed": "#2d1600",
+            "on-error": "#ffffff",
+            "on-background": "#181c1e",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#6a3c00",
+            "control-border": "#669C9F",
+            "surface-container-highest": "#e0e3e5",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#00687c",
+            "text-secondary": "#4A5D61",
+            "surface-variant": "#e0e3e5",
+            "support": "#FF7AB6",
+            "inverse-primary": "#7cd3ec",
+            "warning-bg": "#FAEFE1",
+            "tertiary": "#7d4804",
+            "accent-fill": "#00788F",
+            "on-primary-fixed": "#001f27",
+            "hero-gradient-end": "#006F85",
+            "support-strong": "#FF529E",
+            "outline-variant": "#bec8cc",
+            "on-secondary-fixed": "#001f27",
+            "border-hairline": "#D5E6E9",
+            "on-error-container": "#93000a",
+            "primary-fixed-dim": "#7cd3ec",
+            "surface": "#FFFFFF",
+            "secondary-fixed-dim": "#3bd7fe",
+            "surface-bright": "#f7fafc",
+            "primary-container": "#00788f",
+            "info-text": "#00748A",
+            "on-tertiary-container": "#ffede0",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#d7dadc",
+            "danger-bg": "#FBE5E5",
+            "on-secondary-fixed-variant": "#004e5e"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "margin": "1.25rem",
+            "space-lg": "1rem",
+            "gutter": "1rem",
+            "space-xl": "1.5rem",
+            "space-2xl": "2rem"
+          },
+          "fontFamily": {
+            "title-md": ["Oswald"],
+            "headline-lg": ["Oswald"],
+            "body-md": ["Barlow Condensed"],
+            "caption-sm": ["Barlow Condensed"],
+            "label-md": ["Barlow Condensed"]
+          },
+          "fontSize": {
+            "title-md": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+            "caption-sm": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+            "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-soft-shadow {
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center items-start antialiased selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Frame Container (393px width reference) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-28">
+<!-- TopAppBar (from Shared Components JSON) -->
+<header class="fixed top-0 left-0 w-full max-w-[393px] z-50 flex justify-between items-center px-margin h-14 bg-surface dark:bg-inverse-surface border-b border-border-hairline dark:border-outline shadow-sm dark:shadow-none transition-colors duration-150">
+<div class="flex items-center gap-space-sm">
+<button aria-label="App brand logo icon" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-accent-tint dark:hover:bg-on-surface-variant hover:text-accent-pressed active:scale-95 transition-all duration-150 text-primary dark:text-inverse-primary" type="button">
+<span class="material-symbols-outlined text-[24px]">spa</span>
+</button>
+<span class="font-title-md text-title-md text-primary dark:text-inverse-primary tracking-tight font-bold">Petal Path</span>
+</div>
+<button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-accent-tint dark:hover:bg-on-surface-variant hover:text-accent-pressed active:scale-95 transition-all duration-150 text-text-secondary dark:text-inverse-primary" type="button">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas (padding top adjusted for 56px top bar) -->
+<main class="flex-1 px-margin pt-20 space-y-space-xl">
+<!-- Profile Header / Section -->
+<section class="flex flex-col items-center text-center pt-2">
+<div class="relative mb-3">
+<div class="w-24 h-24 rounded-full p-1 bg-surface ring-2 ring-border-hairline shadow-sm overflow-hidden flex items-center justify-center">
+<img alt="Maya Collins" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WCm3dtqUE8K3EeGCrpbvlNomT_bR3TBz1hEWS7aa-l8W9XEfHB3izQ3ZzqcOcrln8CZt5lQ5CAKnXi60-g52M_shQ_ImT46XesLLFJRAvPftG8Z6AMZR7gw9UrErMbL0_3SjZjU9GRrGqsCD16v3evRiL87dojKlwfirGdOcgbIvbUBRsDBOU726ei0_T-MBqXyevcqFCmluAQ9kgkc6TgYCLT4XMiXOz4Gzb_TN8foK9r64sWdhK2i0TzbQ"/>
+</div>
+<div class="absolute bottom-0 right-1 w-6 h-6 rounded-full bg-accent-fill border-2 border-surface flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+</div>
+</div>
+<h1 class="font-title-md text-[24px] text-text-primary tracking-tight font-semibold">Maya Collins</h1>
+<div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-tint text-accent-fill border border-border-hairline">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-md text-label-md font-semibold tracking-wide">1:1 Coaching, renews 12 Jan</span>
+</div>
+</section>
+<!-- Focal Hero Card: Nutrition targets -->
+<section class="bg-surface rounded-2xl p-5 custom-soft-shadow border border-border-hairline">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-fill text-[20px]">nutrition</span>
+<h2 class="font-title-md text-title-md text-text-primary tracking-tight">Nutrition targets</h2>
+</div>
+<button class="text-accent-fill hover:text-accent-pressed p-1 rounded-full hover:bg-accent-tint transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-2 divide-x divide-border-hairline">
+<!-- Metric 1: Calories -->
+<div class="flex flex-col items-center text-center px-1">
+<span class="font-headline-lg text-[22px] leading-tight text-accent-fill tracking-normal font-bold">1,850</span>
+<span class="font-caption-sm text-caption-sm text-text-secondary font-medium mt-0.5">kcal / day</span>
+</div>
+<!-- Metric 2: Protein -->
+<div class="flex flex-col items-center text-center px-1">
+<span class="font-headline-lg text-[22px] leading-tight text-text-primary tracking-normal font-bold">110 g</span>
+<span class="font-caption-sm text-caption-sm text-text-secondary font-medium mt-0.5">protein</span>
+</div>
+<!-- Metric 3: Fibre -->
+<div class="flex flex-col items-center text-center px-1">
+<span class="font-headline-lg text-[22px] leading-tight text-text-primary tracking-normal font-bold">25 g</span>
+<span class="font-caption-sm text-caption-sm text-text-secondary font-medium mt-0.5">fibre</span>
+</div>
+</div>
+<!-- Subtle Daily Status Bar -->
+<div class="mt-4 pt-3.5 border-t border-border-hairline flex items-center justify-between text-text-secondary">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-accent-fill"></span>
+<span class="font-caption-sm text-caption-sm text-text-secondary">Caloric intake on track</span>
+</div>
+<span class="font-caption-sm text-caption-sm font-semibold text-accent-fill">View Plan</span>
+</div>
+</section>
+<!-- Settings & Preferences Section -->
+<section class="space-y-space-md">
+<h2 class="font-title-md text-[18px] text-text-primary tracking-tight px-1 font-semibold">Account &amp; Program</h2>
+<!-- Grouped Card Container -->
+<div class="bg-surface rounded-2xl custom-soft-shadow border border-border-hairline overflow-hidden divide-y divide-border-hairline">
+<!-- Onboarding Form Row -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-alt transition-colors duration-150 text-left active:scale-[0.99]" type="button">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+</div>
+<span class="font-body-md text-body-md text-text-primary font-medium">Onboarding form</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-success-bg text-success-text font-caption-sm text-caption-sm font-semibold inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check</span>
+                Completed
+              </span>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">chevron_right</span>
+</div>
+</button>
+<!-- Reminders Section with 3 Toggles -->
+<div class="p-4 space-y-3 bg-surface">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</div>
+<div>
+<h3 class="font-body-md text-body-md text-text-primary font-medium">Reminders</h3>
+<p class="font-caption-sm text-caption-sm text-text-secondary">08:00 and 19:30</p>
+</div>
+</div>
+</div>
+<!-- Toggles Sub-cluster -->
+<div class="pl-12 space-y-3 pt-1">
+<!-- Habit Reminders Toggle -->
+<label class="flex items-center justify-between cursor-pointer select-none">
+<span class="font-label-md text-label-md text-text-secondary">Habit reminders</span>
+<input aria-label="Toggle Habit reminders" checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-hairline after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-fill relative"></div>
+</label>
+<!-- New Unlocks Toggle -->
+<label class="flex items-center justify-between cursor-pointer select-none">
+<span class="font-label-md text-label-md text-text-secondary">New unlocks</span>
+<input aria-label="Toggle New unlocks" checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-hairline after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-fill relative"></div>
+</label>
+<!-- Check-ins Toggle -->
+<label class="flex items-center justify-between cursor-pointer select-none">
+<span class="font-label-md text-label-md text-text-secondary">Check-ins</span>
+<input aria-label="Toggle Check-ins" checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-hairline after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-fill relative"></div>
+</label>
+</div>
+</div>
+<!-- Health Data Row -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-alt transition-colors duration-150 text-left active:scale-[0.99]" type="button">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[20px]">monitor_heart</span>
+</div>
+<span class="font-body-md text-body-md text-text-primary font-medium">Health data</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-info-bg text-info-text font-caption-sm text-caption-sm font-semibold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-fill"></span>
+                Connected
+              </span>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">chevron_right</span>
+</div>
+</button>
+<!-- Privacy and my data Row -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-alt transition-colors duration-150 text-left active:scale-[0.99]" type="button">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<span class="font-body-md text-body-md text-text-primary font-medium">Privacy and my data</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">chevron_right</span>
+</button>
+<!-- Coach View Row -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-alt transition-colors duration-150 text-left active:scale-[0.99]" type="button">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<span class="font-body-md text-body-md text-text-primary font-medium">Coach view</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Secondary Action: Sign out button -->
+<div class="pt-2 pb-4">
+<button class="w-full h-14 rounded-full border border-control-border text-text-primary font-label-md text-label-md font-semibold hover:bg-surface-alt active:scale-95 transition-all duration-150 flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">logout</span>
+          Sign Out
+        </button>
+</div>
+</main>
+<!-- BottomNavBar (from Shared Components JSON: Exact 5 Tabs, "Me" active) -->
+<nav class="fixed bottom-0 left-0 w-full max-w-[393px] z-50 flex justify-around items-center px-2 py-1.5 bg-surface border-t border-border-hairline">
+<!-- Home Tab -->
+<button class="flex flex-col items-center justify-center text-text-secondary hover:text-accent-fill transition-colors py-1 flex-1 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Home</span>
+</button>
+<!-- Learn Tab -->
+<button class="flex flex-col items-center justify-center text-text-secondary hover:text-accent-fill transition-colors py-1 flex-1 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">menu_book</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Learn</span>
+</button>
+<!-- Habits Tab -->
+<button class="flex flex-col items-center justify-center text-text-secondary hover:text-accent-fill transition-colors py-1 flex-1 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Habits</span>
+</button>
+<!-- Progress Tab -->
+<button class="flex flex-col items-center justify-center text-text-secondary hover:text-accent-fill transition-colors py-1 flex-1 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">monitoring</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Progress</span>
+</button>
+<!-- Me Tab (Active: pill background behind icon, #00788F text/icon) -->
+<button class="flex flex-col items-center justify-center text-accent-fill font-semibold py-1 flex-1 active:scale-95" type="button">
+<div class="px-3 py-0.5 rounded-full bg-accent-tint flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<span class="font-caption-sm text-caption-sm mt-0.5">Me</span>
+</button>
+</nav>
+</div>
+</body></html>

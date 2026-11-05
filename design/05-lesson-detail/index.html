@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Week 7 - Petal Path</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#181c1e",
+            "on-error": "#ffffff",
+            "surface-dim": "#d7dadc",
+            "success-bg": "#E3F4E9",
+            "on-tertiary-container": "#ffede0",
+            "secondary-fixed": "#b2ebff",
+            "surface-alt": "#EAF5F7",
+            "surface-tint": "#00687c",
+            "accent-pressed": "#006F85",
+            "background": "#F4FBFC",
+            "primary-fixed-dim": "#7cd3ec",
+            "on-tertiary-fixed-variant": "#6a3c00",
+            "on-secondary-container": "#005a6d",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#e0e3e5",
+            "support-strong": "#FF529E",
+            "on-secondary-fixed": "#001f27",
+            "secondary-container": "#3bd7fe",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#ffb871",
+            "support": "#FF7AB6",
+            "accent-fill": "#00788F",
+            "outline": "#6e797c",
+            "surface-container-high": "#e5e9ea",
+            "secondary-fixed-dim": "#3bd7fe",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#ffdcbe",
+            "on-tertiary-fixed": "#2d1600",
+            "error": "#ba1a1a",
+            "control-border": "#669C9F",
+            "outline-variant": "#bec8cc",
+            "on-background": "#181c1e",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#7d4804",
+            "danger-bg": "#FBE5E5",
+            "primary-container": "#00788f",
+            "secondary": "#00677d",
+            "hero-gradient-end": "#006F85",
+            "warning-text": "#A75906",
+            "surface-container": "#ebeef0",
+            "hero-gradient-start": "#00788F",
+            "info-text": "#00748A",
+            "primary": "#005e70",
+            "inverse-on-surface": "#eef1f3",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#2d3133",
+            "inverse-primary": "#7cd3ec",
+            "success-text": "#0E7C3A",
+            "surface-bright": "#f7fafc",
+            "accent-tint": "#DBF6FC",
+            "surface": "#FFFFFF",
+            "surface-container-low": "#f1f4f6",
+            "warning-bg": "#FAEFE1",
+            "text-tertiary": "#66767A",
+            "on-secondary-fixed-variant": "#004e5e",
+            "danger-text": "#CE2020",
+            "border-hairline": "#D5E6E9",
+            "surface-variant": "#e0e3e5",
+            "on-surface-variant": "#3e484c",
+            "on-primary-container": "#dbf5ff",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#004e5e",
+            "on-primary-fixed": "#001f27",
+            "text-primary": "#0C1C1F",
+            "primary-fixed": "#b0ecff",
+            "tertiary-container": "#9a601e",
+            "text-secondary": "#4A5D61",
+            "info-bg": "#E0EFF2"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "space-2xl": "2rem",
+            "margin": "1.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Barlow Condensed", "sans-serif"],
+            "caption-sm": ["Barlow Condensed", "sans-serif"],
+            "title-md": ["Oswald", "sans-serif"],
+            "headline-lg": ["Oswald", "sans-serif"],
+            "body-md": ["Barlow Condensed", "sans-serif"]
+          },
+          "fontSize": {
+            "label-md": [
+              "14px",
+              { "lineHeight": "1.4", "fontWeight": "500" }
+            ],
+            "caption-sm": [
+              "13px",
+              { "lineHeight": "1.4", "fontWeight": "500" }
+            ],
+            "title-md": [
+              "20px",
+              { "lineHeight": "1.3", "fontWeight": "600" }
+            ],
+            "headline-lg": [
+              "32px",
+              { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }
+            ],
+            "body-md": [
+              "16px",
+              { "lineHeight": "1.5", "fontWeight": "400" }
+            ]
+          },
+          "boxShadow": {
+            "soft": "0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06)",
+            "play": "0 4px 14px rgba(0, 120, 143, 0.35)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center selection:bg-accent-tint selection:text-primary">
+<!-- Target Mobile Viewport Frame (393px) -->
+<main class="w-full max-w-[393px] bg-background min-h-screen flex flex-col relative pb-32">
+<!-- Top App Bar / Header -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-sm px-margin h-14 flex items-center justify-between shadow-sm">
+<button aria-label="Go back" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-text-primary hover:bg-accent-tint transition-colors duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h1 class="font-title-md text-title-md text-primary tracking-tight">Week 7</h1>
+<button aria-label="Share or Options" class="w-10 h-10 -mr-2 rounded-full flex items-center justify-center text-text-tertiary hover:bg-accent-tint transition-colors duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">bookmark_border</span>
+</button>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="px-margin pt- space-y-6">
+<!-- 16:9 Video Player Card -->
+<section class="mt-4">
+<div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-surface-alt shadow-soft border border-border-hairline group cursor-pointer">
+<!-- Poster Image -->
+<img alt="Coach in natural warm office discussing routine building" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMsc4ABNBVZRHOSEpnP0aNkC6ZKq1FAbEoet2G-0A2GyDWG9pDTzUcFMNfod9zz0zl_Q3oXYRho2WbEhLGOpt1bBbvChmTCYscOklxLO0wgWEwGQCKhGEi3djaGeIsEqXy7zh9DPo_9cmzeLGNvewNjJj5732C75uzbmCxmGG6PkcJ83t06vnfAQ6gxagZH0zicOHImXp3ZLtDJnLKrTckZWI0hy4eXcjW7Hftl8QaevcGUEmwZ0hVPky5CJqBBWAdN2rPy_rCadGlZQ"/>
+<!-- Subtle Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10 pointer-events-none"></div>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<button aria-label="Play video" class="w-14 h-14 rounded-full bg-accent-fill text-on-primary flex items-center justify-center shadow-play group-hover:bg-accent-pressed group-active:scale-95 transition-all duration-150 pointer-events-auto" type="button">
+<span class="material-symbols-outlined text-[32px] ml-0.5" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Duration Badge -->
+<div class="absolute bottom-3 right-3 bg-on-surface/75 backdrop-blur-sm text-surface px-2.5 py-0.5 rounded-full font-caption-sm text-caption-sm font-medium flex items-center gap-1 shadow-sm">
+<span>12:04</span>
+</div>
+<!-- Subtle Progress Scrubber Bar -->
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-white/30">
+<div class="h-full bg-accent-fill w-[28%] rounded-r-full"></div>
+</div>
+</div>
+</section>
+<!-- Lesson Title & Meta -->
+<section class="space-y-2.5">
+<div class="flex items-center gap-2">
+<span class="bg-accent-tint text-primary px-3 py-1 rounded-full font-label-md text-label-md font-semibold tracking-wide">
+            Core Module
+          </span>
+<span class="text-text-tertiary font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+            15 min completion
+          </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary leading-tight">
+          Routines that bend, not break
+        </h2>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+          Busy weeks happen. This lesson shows you how to keep one small routine going when everything else slips.
+        </p>
+</section>
+<!-- Tasks Section -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-text-primary tracking-tight">Tasks</h3>
+<span class="font-caption-sm text-caption-sm text-text-tertiary">1 of 2 done</span>
+</div>
+<div class="space-y-2.5">
+<!-- Task Item 1: Done -->
+<div class="bg-surface rounded-2xl p-4 border border-border-hairline shadow-soft flex items-center justify-between gap-3 cursor-pointer hover:bg-surface-bright transition-colors duration-150">
+<div class="flex items-center gap-3.5 flex-1 min-w-0">
+<button aria-label="Toggle completed task" class="w-7 h-7 rounded-full bg-accent-fill text-on-primary flex items-center justify-center shrink-0 active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</button>
+<span class="font-body-md text-body-md text-text-tertiary line-through truncate">
+                Write your 3 non-negotiables
+              </span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">more_vert</span>
+</div>
+<!-- Task Item 2: Pending -->
+<div class="bg-surface rounded-2xl p-4 border border-border-hairline shadow-soft flex items-center justify-between gap-3 cursor-pointer hover:bg-surface-bright transition-colors duration-150">
+<div class="flex items-center gap-3.5 flex-1 min-w-0">
+<button aria-label="Toggle pending task" class="w-7 h-7 rounded-full border-2 border-control-border bg-transparent flex items-center justify-center shrink-0 hover:border-accent-fill active:scale-90 transition-all" type="button">
+</button>
+<span class="font-body-md text-body-md text-text-primary font-medium truncate">
+                Set one phone reminder
+              </span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">notifications_active</span>
+</div>
+</div>
+</section>
+<!-- Resources Section -->
+<section class="space-y-3 pb-4">
+<h3 class="font-title-md text-title-md text-text-primary tracking-tight">Resources</h3>
+<!-- PDF Card -->
+<div class="bg-surface rounded-2xl p-4 border border-border-hairline shadow-soft flex items-center justify-between gap-3">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="w-11 h-11 rounded-xl bg-surface-alt border border-border-hairline flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">description</span>
+</div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md font-semibold text-text-primary truncate">
+                Week 7 workbook (PDF)
+              </p>
+<p class="font-caption-sm text-caption-sm text-text-tertiary">
+                1.4 MB • Printable worksheet
+              </p>
+</div>
+</div>
+<button aria-label="Download workbook" class="w-10 h-10 rounded-full border border-control-border text-primary hover:bg-accent-tint flex items-center justify-center shrink-0 transition-colors duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Anchored Primary Action Bottom Bar (No Bottom Navigation) -->
+<footer class="fixed bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-md px-margin pt-3 pb-7 max-w-[393px] mx-auto shadow-[0_-4px_16px_rgba(0,0,0,0.05)]">
+<button class="w-full h-14 bg-accent-fill hover:bg-accent-pressed active:scale-[0.99] text-on-primary font-title-md text-title-md rounded-full shadow-soft flex items-center justify-center gap-2 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+<span>Mark lesson complete</span>
+</button>
+</footer>
+</main>
+</body></html>

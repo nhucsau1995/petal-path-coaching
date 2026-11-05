@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Petal Path - Block 2 Check-in</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#181c1e",
+            "on-primary-container": "#dbf5ff",
+            "primary-fixed-dim": "#7cd3ec",
+            "success-bg": "#E3F4E9",
+            "danger-text": "#CE2020",
+            "inverse-surface": "#2d3133",
+            "inverse-primary": "#7cd3ec",
+            "tertiary-fixed": "#ffdcbe",
+            "control-border": "#669C9F",
+            "surface-container-high": "#e5e9ea",
+            "outline-variant": "#bec8cc",
+            "primary": "#005e70",
+            "inverse-on-surface": "#eef1f3",
+            "on-tertiary-fixed-variant": "#6a3c00",
+            "background": "#F4FBFC",
+            "accent-tint": "#DBF6FC",
+            "surface-tint": "#00687c",
+            "border-hairline": "#D5E6E9",
+            "surface-variant": "#e0e3e5",
+            "surface-container-highest": "#e0e3e5",
+            "surface": "#FFFFFF",
+            "on-tertiary": "#ffffff",
+            "info-text": "#00748A",
+            "tertiary": "#7d4804",
+            "on-secondary": "#ffffff",
+            "surface-container-low": "#f1f4f6",
+            "text-secondary": "#4A5D61",
+            "on-secondary-container": "#005a6d",
+            "surface-bright": "#f7fafc",
+            "info-bg": "#E0EFF2",
+            "hero-gradient-start": "#00788F",
+            "on-surface-variant": "#3e484c",
+            "tertiary-container": "#9a601e",
+            "secondary": "#00677d",
+            "danger-bg": "#FBE5E5",
+            "accent-pressed": "#006F85",
+            "on-secondary-fixed-variant": "#004e5e",
+            "surface-container": "#ebeef0",
+            "on-tertiary-container": "#ffede0",
+            "text-primary": "#0C1C1F",
+            "accent-fill": "#00788F",
+            "text-tertiary": "#66767A",
+            "hero-gradient-end": "#006F85",
+            "success-text": "#0E7C3A",
+            "secondary-fixed-dim": "#3bd7fe",
+            "primary-container": "#00788f",
+            "on-primary-fixed-variant": "#004e5e",
+            "primary-fixed": "#b0ecff",
+            "secondary-container": "#3bd7fe",
+            "on-primary-fixed": "#001f27",
+            "on-tertiary-fixed": "#2d1600",
+            "secondary-fixed": "#b2ebff",
+            "warning-text": "#A75906",
+            "error": "#ba1a1a",
+            "on-background": "#181c1e",
+            "on-error": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface-alt": "#EAF5F7",
+            "on-secondary-fixed": "#001f27",
+            "error-container": "#ffdad6",
+            "warning-bg": "#FAEFE1",
+            "surface-dim": "#d7dadc",
+            "on-error-container": "#93000a",
+            "outline": "#6e797c",
+            "on-primary": "#ffffff",
+            "tertiary-fixed-dim": "#ffb871",
+            "support": "#FF7AB6",
+            "support-strong": "#FF529E"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xl": "2rem",
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Barlow Condensed", "sans-serif"],
+            "title-md": ["Oswald", "sans-serif"],
+            "headline-lg": ["Oswald", "sans-serif"],
+            "caption-sm": ["Barlow Condensed", "sans-serif"],
+            "body-md": ["Barlow Condensed", "sans-serif"]
+          },
+          "fontSize": {
+            "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+            "title-md": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption-sm": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    
+    /* Custom Slider Thumb Styling */
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 3px solid #00788F;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      margin-top: -9px;
+    }
+    input[type=range]::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 3px solid #00788F;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      height: 6px;
+      border-radius: 9999px;
+      background: transparent;
+    }
+    input[type=range]::-moz-range-track {
+      height: 6px;
+      border-radius: 9999px;
+      background: transparent;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center selection:bg-accent-tint selection:text-accent-fill antialiased">
+<!-- Mobile Viewport Container: 393px × 852px frame constraints -->
+<div class="w-full max-w-[393px] min-h-[852px] bg-background flex flex-col justify-between relative shadow-2xl md:my-6 md:rounded-[40px] md:border md:border-border-hairline overflow-hidden">
+<!-- Top Bar Navigation (Task-focused with Back action: Bottom Navigation Suppressed) -->
+<header class="w-full pt-12 px-margin pb-3 flex items-center justify-between bg-surface shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+<div class="flex items-center gap-space-md">
+<button aria-label="Go back" class="w-10 h-10 rounded-full flex items-center justify-center border border-border-hairline text-text-primary hover:bg-surface-alt active:scale-95 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-title-md text-title-md text-text-primary tracking-tight">Block 2 check-in</h1>
+</div>
+<div class="w-10 h-10 flex items-center justify-center text-text-tertiary">
+<span class="material-symbols-outlined text-[20px]" data-icon="spa">spa</span>
+</div>
+</header>
+<!-- Main Content Canvas (Scrollable Form) -->
+<main class="flex-1 px-margin pt-space-lg pb-6 overflow-y-auto space-y-space-xl">
+<!-- Stepper Indicator -->
+<section aria-label="Check-in progress" class="space-y-space-xs">
+<div class="flex justify-between items-center">
+<span class="font-caption-sm text-caption-sm text-text-secondary uppercase tracking-wider font-semibold">Step 2 of 4</span>
+<span class="font-caption-sm text-caption-sm text-text-tertiary">50% completed</span>
+</div>
+<!-- Progress Bar Track -->
+<div class="w-full h-1.5 bg-border-hairline rounded-full overflow-hidden">
+<div class="h-full bg-accent-fill rounded-full" style="width: 50%;"></div>
+</div>
+</section>
+<!-- Question 1: Energy Level Options -->
+<section aria-labelledby="energy-question-heading" class="space-y-space-md">
+<div class="space-y-1">
+<h2 class="font-title-md text-[18px] text-text-primary leading-tight" id="energy-question-heading">
+            How has your energy been this block?
+          </h2>
+<p class="font-caption-sm text-caption-sm text-text-tertiary">Select the option that best reflects your daytime baseline.</p>
+</div>
+<!-- Stacked Option Buttons -->
+<div aria-label="Energy levels" class="flex flex-col gap-2.5" role="radiogroup">
+<!-- Option 1: Very low -->
+<button aria-checked="false" class="w-full h-14 px-space-lg rounded-2xl bg-surface border border-border-hairline text-text-primary font-body-md text-body-md flex items-center justify-between hover:bg-surface-alt active:scale-[0.99] transition-all duration-150" role="radio" type="button">
+<span class="font-medium text-[17px]">Very low</span>
+<div class="w-5 h-5 rounded-full border border-control-border/60"></div>
+</button>
+<!-- Option 2: Low -->
+<button aria-checked="false" class="w-full h-14 px-space-lg rounded-2xl bg-surface border border-border-hairline text-text-primary font-body-md text-body-md flex items-center justify-between hover:bg-surface-alt active:scale-[0.99] transition-all duration-150" role="radio" type="button">
+<span class="font-medium text-[17px]">Low</span>
+<div class="w-5 h-5 rounded-full border border-control-border/60"></div>
+</button>
+<!-- Option 3: Steady (SELECTED STATE) -->
+<button aria-checked="true" class="w-full h-14 px-space-lg rounded-2xl bg-accent-tint border-2 border-accent-fill text-accent-fill font-body-md text-body-md flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.04)] active:scale-[0.99] transition-all duration-150" role="radio" type="button">
+<span class="font-semibold text-[17px]">Steady</span>
+<div class="w-5 h-5 rounded-full bg-accent-fill flex items-center justify-center text-surface shadow-xs">
+<span class="material-symbols-outlined text-[16px] font-bold" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</button>
+<!-- Option 4: Good -->
+<button aria-checked="false" class="w-full h-14 px-space-lg rounded-2xl bg-surface border border-border-hairline text-text-primary font-body-md text-body-md flex items-center justify-between hover:bg-surface-alt active:scale-[0.99] transition-all duration-150" role="radio" type="button">
+<span class="font-medium text-[17px]">Good</span>
+<div class="w-5 h-5 rounded-full border border-control-border/60"></div>
+</button>
+<!-- Option 5: Great -->
+<button aria-checked="false" class="w-full h-14 px-space-lg rounded-2xl bg-surface border border-border-hairline text-text-primary font-body-md text-body-md flex items-center justify-between hover:bg-surface-alt active:scale-[0.99] transition-all duration-150" role="radio" type="button">
+<span class="font-medium text-[17px]">Great</span>
+<div class="w-5 h-5 rounded-full border border-control-border/60"></div>
+</button>
+</div>
+</section>
+<!-- Question 2: Obstacles / Friction Points -->
+<section aria-labelledby="friction-question-heading" class="space-y-space-sm">
+<label class="block font-title-md text-[18px] text-text-primary leading-tight" for="friction-input" id="friction-question-heading">
+          What got in the way?
+        </label>
+<div class="relative">
+<textarea class="w-full min-h-[96px] p-3.5 rounded-xl border border-control-border bg-surface text-text-primary font-body-md text-body-md focus:border-accent-fill focus:ring-1 focus:ring-accent-fill focus:outline-none transition-colors duration-150 resize-none shadow-xs" id="friction-input" rows="3">School holidays and late nights.</textarea>
+<div class="absolute right-3 bottom-3 text-text-tertiary">
+<span class="font-caption-sm text-caption-sm">31 chars</span>
+</div>
+</div>
+</section>
+<!-- Question 3 / Slider: Sleep Quality -->
+<section aria-labelledby="sleep-heading" class="space-y-space-md p-space-lg bg-surface rounded-3xl border border-border-hairline shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-title-md text-[18px] text-text-primary leading-tight" id="sleep-heading">Sleep quality</h2>
+<p class="font-caption-sm text-caption-sm text-text-secondary mt-0.5">Average restfulness over the past 14 days</p>
+</div>
+<!-- Badge Indicator -->
+<div class="px-space-md py-1 bg-accent-tint text-accent-fill rounded-full font-title-md text-[16px] tracking-tight border border-accent-fill/20 flex items-center gap-1 shadow-xs">
+<span class="font-bold">7</span>
+<span class="text-text-tertiary text-[12px] font-normal font-caption-sm">/ 10</span>
+</div>
+</div>
+<!-- Custom Styled Slider Track Container -->
+<div class="pt-2 pb-1 space-y-2">
+<div class="relative flex items-center">
+<!-- Background Inactive Track -->
+<div class="absolute w-full h-1.5 bg-border-hairline rounded-full pointer-events-none"></div>
+<!-- Active Track Fill (70%) -->
+<div class="absolute h-1.5 bg-accent-fill rounded-full pointer-events-none" style="width: 70%;"></div>
+<!-- Interactive Native Range -->
+<input aria-label="Sleep quality from 1 to 10" class="relative z-10 w-full appearance-none bg-transparent cursor-pointer focus:outline-none" id="sleepSlider" max="10" min="1" type="range" value="7"/>
+</div>
+<!-- Extremes Scale Markers -->
+<div class="flex justify-between items-center font-caption-sm text-caption-sm text-text-tertiary pt-1">
+<span class="flex items-center gap-1">
+<span class="font-bold text-text-secondary">1</span>
+<span>• Poor</span>
+</span>
+<span class="flex items-center gap-1">
+<span>Restful •</span>
+<span class="font-bold text-text-secondary">10</span>
+</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Sticky Action Section (Pill Button 56px, Zero Bottom Nav) -->
+<footer class="w-full px-margin pb-8 pt-3 bg-gradient-to-t from-background via-background to-transparent">
+<button class="w-full h-14 rounded-full bg-accent-fill hover:bg-accent-pressed text-surface font-title-md text-[18px] tracking-wide font-medium flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(0,120,143,0.25)] active:scale-[0.98] transition-all duration-150 group" type="button">
+<span>Next</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-0.5 transition-transform duration-150" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="w-full flex justify-center mt-3">
+<span class="font-caption-sm text-caption-sm text-text-tertiary">All responses are saved privately with your coach</span>
+</div>
+</footer>
+</div>
+<script>
+    // Lightweight micro-interaction for Slider visual track sync & badge update
+    const slider = document.getElementById('sleepSlider');
+    if (slider) {
+      slider.addEventListener('input', (e) => {
+        const value = e.target.value;
+        const percentage = ((value - 1) / (10 - 1)) * 100;
+        const activeTrack = slider.previousElementSibling;
+        if (activeTrack) {
+          activeTrack.style.width = `${percentage}%`;
+        }
+        const badgeSpan = document.querySelector('#sleep-heading').closest('section').querySelector('.font-bold');
+        if (badgeSpan) {
+          badgeSpan.textContent = value;
+        }
+      });
+    }
+  </script>
+</body></html>

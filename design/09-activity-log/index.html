@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=393, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Progress - Activity | Petal Path</title>
+<!-- Google Fonts: Oswald & Barlow Condensed -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration Script verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "danger-text": "#CE2020",
+            "surface-alt": "#EAF5F7",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#004e5e",
+            "border-hairline": "#D5E6E9",
+            "surface-tint": "#00687c",
+            "tertiary-fixed": "#ffdcbe",
+            "error": "#ba1a1a",
+            "inverse-primary": "#7cd3ec",
+            "on-surface-variant": "#3e484c",
+            "secondary-fixed-dim": "#3bd7fe",
+            "on-primary": "#ffffff",
+            "primary": "#005e70",
+            "tertiary-fixed-dim": "#ffb871",
+            "accent-fill": "#00788F",
+            "outline": "#6e797c",
+            "on-tertiary-fixed": "#2d1600",
+            "primary-fixed-dim": "#7cd3ec",
+            "success-bg": "#E3F4E9",
+            "support": "#FF7AB6",
+            "inverse-surface": "#2d3133",
+            "text-secondary": "#4A5D61",
+            "accent-pressed": "#006F85",
+            "surface-container": "#ebeef0",
+            "on-background": "#181c1e",
+            "surface-container-highest": "#e0e3e5",
+            "success-text": "#0E7C3A",
+            "surface": "#FFFFFF",
+            "hero-gradient-start": "#00788F",
+            "warning-text": "#A75906",
+            "surface-container-low": "#f1f4f6",
+            "on-surface": "#181c1e",
+            "surface-dim": "#d7dadc",
+            "surface-container-lowest": "#ffffff",
+            "text-tertiary": "#66767A",
+            "text-primary": "#0C1C1F",
+            "on-error": "#ffffff",
+            "tertiary": "#7d4804",
+            "secondary-fixed": "#b2ebff",
+            "primary-container": "#00788f",
+            "secondary": "#00677d",
+            "on-tertiary": "#ffffff",
+            "support-strong": "#FF529E",
+            "control-border": "#669C9F",
+            "surface-bright": "#f7fafc",
+            "info-bg": "#E0EFF2",
+            "surface-container-high": "#e5e9ea",
+            "on-secondary-fixed": "#001f27",
+            "error-container": "#ffdad6",
+            "on-primary-container": "#dbf5ff",
+            "on-primary-fixed-variant": "#004e5e",
+            "tertiary-container": "#9a601e",
+            "background": "#F4FBFC",
+            "info-text": "#00748A",
+            "inverse-on-surface": "#eef1f3",
+            "hero-gradient-end": "#006F85",
+            "warning-bg": "#FAEFE1",
+            "on-tertiary-container": "#ffede0",
+            "secondary-container": "#3bd7fe",
+            "danger-bg": "#FBE5E5",
+            "surface-variant": "#e0e3e5",
+            "on-tertiary-fixed-variant": "#6a3c00",
+            "primary-fixed": "#b0ecff",
+            "accent-tint": "#DBF6FC",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#001f27",
+            "on-secondary-container": "#005a6d",
+            "outline-variant": "#bec8cc"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-xl": "1.5rem",
+            "space-md": "0.75rem",
+            "space-xs": "0.25rem",
+            "space-2xl": "2rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Barlow Condensed"],
+            "headline-lg": ["Oswald"],
+            "title-md": ["Oswald"],
+            "label-md": ["Barlow Condensed"],
+            "caption-sm": ["Barlow Condensed"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "title-md": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+            "caption-sm": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      -webkit-tap-highlight-color: transparent;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+    .soft-card-shadow {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+    .progress-glow {
+      filter: drop-shadow(0 2px 8px rgba(0, 194, 232, 0.28));
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex justify-center selection:bg-accent-tint">
+<!-- Mobile Container (393px width fixed frame emulation) -->
+<main class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-28">
+<!-- Top App Bar (Shared Component Anchor) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-margin h-14 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[26px]" data-icon="spa">spa</span>
+<span class="font-title-md text-title-md text-text-primary tracking-tight font-bold">Progress</span>
+</div>
+<button aria-label="Notifications" class="w-10 h-10 rounded-full flex items-center justify-center text-text-secondary hover:bg-accent-tint hover:text-accent-pressed active:scale-95 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas with 20px edge margin -->
+<div class="px-margin pt-space-md flex flex-col gap-space-lg">
+<!-- Segmented Control: Flower vs Activity -->
+<nav aria-label="Progress View Selection" class="bg-surface-alt p-1 rounded-full flex items-center shadow-inner">
+<button class="flex-1 py-2 text-center rounded-full font-label-md text-label-md text-text-tertiary hover:text-text-primary transition-all duration-150" type="button">
+          Flower
+        </button>
+<button class="flex-1 py-2 text-center rounded-full font-label-md text-label-md font-semibold bg-accent-fill text-on-primary shadow-sm transition-all duration-150" type="button">
+          Activity
+        </button>
+</nav>
+<!-- Focal Card: Step Count & Circular Tracker -->
+<section aria-label="Daily Steps Tracking" class="bg-surface rounded-[20px] p-space-xl soft-card-shadow flex flex-col items-center relative overflow-hidden border border-border-hairline/60">
+<!-- Header row of the card -->
+<div class="w-full flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md font-semibold text-text-secondary">DAILY STEPS</span>
+<span class="inline-flex items-center gap-1 font-caption-sm text-caption-sm text-info-text bg-accent-tint px-2.5 py-0.5 rounded-full font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-fill"></span>
+            8,000 goal
+          </span>
+</div>
+<!-- Circular Progress Meter with Centered Big Display Numeral -->
+<div class="relative w-48 h-48 my-1 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 160 160">
+<!-- Background Track -->
+<circle cx="80" cy="80" fill="transparent" r="68" stroke="#D5E6E9" stroke-linecap="round" stroke-width="12"></circle>
+<!-- Progress Arc (6842 / 8000 = ~85.5% -> circumference = 2 * pi * 68 ~= 427.25; stroke-dashoffset = 427.25 * (1 - 0.855) = 61.9) -->
+<circle class="progress-glow transition-all duration-700 ease-out" cx="80" cy="80" fill="transparent" r="68" stroke="#00C2E8" stroke-dasharray="427.25" stroke-dashoffset="61.9" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<!-- Core Counter Inside SVG Ring -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-[42px] leading-none text-text-primary tracking-tight font-bold">6,842</span>
+<span class="font-label-md text-label-md text-text-secondary uppercase tracking-wider font-semibold mt-1">steps</span>
+</div>
+</div>
+<!-- Subtitle and Remaining steps indicator -->
+<div class="mt-2 text-center">
+<p class="font-body-md text-body-md text-text-secondary">
+<strong class="font-semibold text-accent-fill">1,158</strong> steps to daily goal
+          </p>
+</div>
+</section>
+<!-- Sync Row Action -->
+<section aria-label="Health Sync Status" class="flex items-center justify-between bg-surface/70 px-space-lg py-space-sm rounded-full border border-border-hairline">
+<button class="h-9 px-4 rounded-full border-[1.5px] border-control-border text-primary hover:bg-accent-tint flex items-center gap-1.5 active:scale-95 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[18px] text-accent-fill" data-icon="favorite">favorite</span>
+<span class="font-label-md text-label-md font-semibold text-text-primary">Sync health data</span>
+</button>
+<div class="flex items-center gap-1.5 text-text-tertiary">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span class="font-caption-sm text-caption-sm font-medium">Last synced 08:12</span>
+</div>
+</section>
+<!-- "Today" Activity List Section -->
+<section aria-labelledby="today-activities-title" class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-title-md text-title-md text-text-primary" id="today-activities-title">Today</h2>
+<span class="font-caption-sm text-caption-sm text-text-tertiary font-semibold uppercase tracking-wider">3 completed</span>
+</div>
+<!-- Grouped List Container -->
+<div class="bg-surface rounded-[20px] soft-card-shadow border border-border-hairline/60 divide-y divide-border-hairline/50 overflow-hidden">
+<!-- Activity Item 1: Walk -->
+<div class="p-space-lg flex items-center justify-between hover:bg-surface-alt/40 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[22px]" data-icon="directions_walk">directions_walk</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-text-primary leading-tight">Walk</span>
+<span class="font-caption-sm text-caption-sm text-text-secondary">32 min • Morning brisk loop</span>
+</div>
+</div>
+<span class="bg-accent-tint text-info-text font-caption-sm text-caption-sm font-semibold px-2.5 py-1 rounded-full">
+              Synced
+            </span>
+</div>
+<!-- Activity Item 2: Strength session -->
+<div class="p-space-lg flex items-center justify-between hover:bg-surface-alt/40 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[22px]" data-icon="fitness_center">fitness_center</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-text-primary leading-tight">Strength session</span>
+<span class="font-caption-sm text-caption-sm text-text-secondary">40 min • Core &amp; lower back</span>
+</div>
+</div>
+<span class="bg-surface-alt text-text-secondary font-caption-sm text-caption-sm font-semibold px-2.5 py-1 rounded-full">
+              Logged by hand
+            </span>
+</div>
+<!-- Activity Item 3: Yoga -->
+<div class="p-space-lg flex items-center justify-between hover:bg-surface-alt/40 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[22px]" data-icon="self_improvement">self_improvement</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-text-primary leading-tight">Yoga</span>
+<span class="font-caption-sm text-caption-sm text-text-secondary">20 min • Post-walk mobility</span>
+</div>
+</div>
+<span class="bg-accent-tint text-info-text font-caption-sm text-caption-sm font-semibold px-2.5 py-1 rounded-full">
+              Synced
+            </span>
+</div>
+</div>
+</section>
+<!-- Metrics Cards Grid: Body & Food -->
+<section aria-label="Key Health Metrics" class="grid grid-cols-2 gap-space-md">
+<!-- Card 1: Body -->
+<article class="bg-surface rounded-[20px] p-space-lg soft-card-shadow border border-border-hairline/60 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-title-md text-title-md text-text-primary">Body</span>
+<span class="material-symbols-outlined text-text-tertiary text-[20px]" data-icon="straighten">straighten</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-baseline justify-between">
+<span class="font-caption-sm text-caption-sm text-text-secondary">Weight</span>
+<span class="font-body-md text-body-md font-bold text-text-primary">68.4 kg</span>
+</div>
+<div class="w-full h-px bg-border-hairline my-0.5"></div>
+<div class="flex items-baseline justify-between">
+<span class="font-caption-sm text-caption-sm text-text-secondary">Waist</span>
+<span class="font-body-md text-body-md font-bold text-text-primary">78 cm</span>
+</div>
+</div>
+</article>
+<!-- Card 2: Food -->
+<article class="bg-surface rounded-[20px] p-space-lg soft-card-shadow border border-border-hairline/60 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-title-md text-title-md text-text-primary">Food</span>
+<span class="material-symbols-outlined text-text-tertiary text-[20px]" data-icon="restaurant">restaurant</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-caption-sm text-caption-sm text-text-secondary">Protein</span>
+<span class="font-caption-sm text-caption-sm font-bold text-text-primary">92 / 110 g</span>
+</div>
+<!-- Horizontal Progress Bar (83%) -->
+<div class="w-full bg-border-hairline h-2 rounded-full overflow-hidden">
+<div class="bg-accent-fill h-full rounded-full w-[83.6%]"></div>
+</div>
+<span class="font-caption-sm text-caption-sm text-text-tertiary text-right">18g left</span>
+</div>
+</article>
+</section>
+<!-- Main CTA Button -->
+<section class="pt-space-xs pb-space-sm">
+<button class="w-full h-14 bg-accent-fill hover:bg-accent-pressed active:scale-[0.98] text-on-primary rounded-full flex items-center justify-center gap-2 font-body-md text-body-md font-semibold tracking-wide shadow-md transition-all duration-150" type="button">
+<span>Log activity</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</button>
+</section>
+</div>
+<!-- Bottom Navigation Bar (Mandated Persistent 5 Tabs: Home, Learn, Habits, Progress, Me) -->
+<nav aria-label="Global App Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin pb-safe pt-2 bg-surface shadow-[0_-1px_3px_rgba(0,0,0,0.04)]">
+<!-- Tab 1: Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary px-space-md py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#home">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Home</span>
+</a>
+<!-- Tab 2: Learn (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary px-space-md py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#learn">
+<span class="material-symbols-outlined text-[24px]" data-icon="menu_book">menu_book</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Learn</span>
+</a>
+<!-- Tab 3: Habits (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary px-space-md py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#habits">
+<span class="material-symbols-outlined text-[24px]" data-icon="check_circle">check_circle</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Habits</span>
+</a>
+<!-- Tab 4: Progress (ACTIVE destination per prompt specification) -->
+<a aria-current="page" class="flex flex-col items-center justify-center bg-accent-tint text-primary rounded-full px-space-md py-space-xs font-semibold active:scale-95 transition-transform duration-150" href="#progress">
+<span class="material-symbols-outlined text-[24px] text-accent-fill" data-icon="monitoring">monitoring</span>
+<span class="font-caption-sm text-caption-sm text-accent-fill mt-0.5 font-bold">Progress</span>
+</a>
+<!-- Tab 5: Me (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary px-space-md py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#me">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Me</span>
+</a>
+</nav>
+</main>
+</body></html>
